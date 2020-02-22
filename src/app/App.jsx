@@ -5,6 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 
+import Onboarding from '../routes/Onboarding';
 import Signin from '../routes/Signin';
 import Signup from '../routes/Signup';
 
@@ -14,6 +15,7 @@ function App() {
       <Switch>
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/signup" component={Signup} />
+        <Route exact path="/" component={Onboarding} />
       </Switch>
     </Router>
   );
