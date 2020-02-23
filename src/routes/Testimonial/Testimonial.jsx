@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
 const Testimonial = () => {
 	const classes = useStyles()
 	return (
-		<Container component="main" maxWidth="xs">
+		<Container component="main" maxWidth="sm">
 			<CssBaseline />
 			<div className={classes.paper}>
         {
