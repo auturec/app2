@@ -14,18 +14,29 @@ import Profile from '../routes/Profile';
 import Signin from '../routes/Signin';
 import Signup from '../routes/Signup';
 
+import {
+  SIGNIN,
+  SIGNUP,
+  FORUM,
+  FORUM_ID,
+  TESTIMONIAL,
+  PROFILE,
+  FAQ,
+  ONBOARDING,
+} from '../constants/routes'
+
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/signin" component={Signin} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/forum" component={Forum} />
-        <Route exact path="/forum/:id" component={ForumPost} />
-        <Route exact path="/testimonial" component={Testimonial} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/faq" component={Faq} />
-        <Route exact path="/" component={Onboarding} />
+        <Route exact path={SIGNIN} component={Signin} />
+        <Route exact path={SIGNUP} component={Signup} />
+        <Route exact path={FORUM} component={Forum} />
+        <Route exact path={FORUM_ID} component={ForumPost} />
+        <Route exact path={TESTIMONIAL} component={Testimonial} />
+        <Route exact path={PROFILE} component={Profile} />
+        <Route exact path={FAQ} component={Faq} />
+        <Route exact path={ONBOARDING} component={Onboarding} />
       </Switch>
     </Router>
   );
