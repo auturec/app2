@@ -3,28 +3,36 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 
+import Post from './Post';
+
+import { TestimonialData } from './TestimonialData';
+
 const useStyles = makeStyles(theme => ({
 	paper: {
-		marginTop: theme.spacing(8),
-	},
-	avatar: {
-		margin: theme.spacing(1),
-		backgroundColor: theme.palette.secondary.main,
-	},
-	forum: {
-		width: '100%', // Fix IE 11 issue.
-		marginTop: theme.spacing(3),
+    marginTop: theme.spacing(8),
 	},
 }));
 
-export default function Testimonial() {
+const Testimonial = () => {
 	const classes = useStyles()
 	return (
-		<Container component="main" maxWidth="sm">
+		<Container component="main" maxWidth="xs">
 			<CssBaseline />
 			<div className={classes.paper}>
-				Testimonial
+        {
+          TestimonialData.map(post => (
+            <Post 
+              key={post.id}
+              userName={post.userName}
+              profilePic={post.profilePic}
+              userInfo={post.userInfo}
+              comment={post.comment}
+            />
+          ))
+        }
 			</div>
 		</Container>
 	)
 }
+
+export default Testimonial;
