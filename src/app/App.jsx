@@ -16,6 +16,7 @@ import Profile from '../routes/Profile';
 import Signin from '../routes/Signin';
 import Signup from '../routes/Signup';
 import Account from '../routes/Account';
+import ForgotPassword from '../routes/ForgotPassword';
 
 import {
   SIGNIN,
@@ -27,6 +28,7 @@ import {
   FAQ,
   ONBOARDING,
   ACCOUNT,
+  FORGOT_PASSWORD,
 } from '../constants/routes'
 
 function App() {
@@ -43,6 +45,7 @@ function App() {
         <Route path={PROFILE} component={Profile} />
         <Route path={FAQ} component={Faq} />
         <Route path={ACCOUNT} component={Account} />
+        <Route path={FORGOT_PASSWORD} component={ForgotPassword} />
       </Switch>
     </Router>
   );

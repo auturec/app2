@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Signin() {
+export default function ForgotPassword() {
   const classes = useStyles();
 
   return (
@@ -57,7 +57,7 @@ export default function Signin() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Forgot Password
         </Typography>
         <form className={classes.form} noValidate>
           <TextField

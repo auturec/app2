@@ -6,6 +6,7 @@ export const TESTIMONIAL = '/testimonial';
 export const PROFILE = '/profile';
 export const FAQ = '/faq';
 export const ACCOUNT = '/account';
+export const FORGOT_PASSWORD = '/forgot-password';
 export const ONBOARDING = '/';
 
 export const publicRoutes = [
