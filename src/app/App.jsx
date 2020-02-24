@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link,
 } from 'react-router-dom';
 
 import NavBar from '../components/NavBar'
@@ -27,19 +28,31 @@ import {
   ONBOARDING,
 } from '../constants/routes'
 
+function Index() {
+  return <h2>Home</h2>;
+}
+
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}
+
 function App() {
   return (
     <Router>
       <NavBar/>
       <Switch>
-        <Route exact path={SIGNIN} component={Signin} />
-        <Route exact path={SIGNUP} component={Signup} />
-        <Route exact path={FORUM} component={Forum} />
-        <Route exact path={FORUM_ID} component={ForumPost} />
-        <Route exact path={TESTIMONIAL} component={Testimonial} />
-        <Route exact path={PROFILE} component={Profile} />
-        <Route exact path={FAQ} component={Faq} />
-        <Route exact path={ONBOARDING} component={Onboarding} />
+        <Route path={ONBOARDING} exact component={Onboarding} />
+        <Route path={SIGNIN} component={Signin} />
+        <Route path={SIGNUP} component={Signup} />
+        <Route path={FORUM} component={Forum} />
+        <Route path={FORUM_ID} component={ForumPost} />
+        <Route path={TESTIMONIAL} component={Testimonial} />
+        <Route path={PROFILE} component={Profile} />
+        <Route path={FAQ} component={Faq} />
       </Switch>
     </Router>
   );

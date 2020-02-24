@@ -50,11 +50,11 @@ const SideBar = () => {
       <List>
         {
           publicRoutes.map((route, index) => (
-            <ListItem button key={index}>
-              <Link to={route.path}>
+            <Link to={route.path} key={index}>
+              <ListItem button>
                 <ListItemText primary={route.name} className={classes.listItem} />
-              </Link>
-            </ListItem>            
+              </ListItem>              
+            </Link>
           ))
         }
       </List>
@@ -62,11 +62,11 @@ const SideBar = () => {
       <List>
         {
           privateRoutes.map((route, index) => (
-            <ListItem button key={index}>
-              <Link to={route.path}>
+            <Link to={route.path} key={index}>
+              <ListItem button>
                 <ListItemText primary={route.name} className={classes.listItem} />
-              </Link>
-            </ListItem>            
+              </ListItem>              
+            </Link>         
           ))
         }
       </List>
