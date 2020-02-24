@@ -5,28 +5,25 @@ export const FORUM_ID = '/forum/:id';
 export const TESTIMONIAL = '/testimonial';
 export const PROFILE = '/profile';
 export const FAQ = '/faq';
+export const ACCOUNT = '/account';
 export const ONBOARDING = '/';
 
 export const publicRoutes = [
   {
     path: ONBOARDING,
     name: 'Home',
-    protected: false,
   },
   {
     path: TESTIMONIAL,
     name: 'Testimonial',
-    protected: false,
   },
   {
     path: FORUM,
     name: 'Forum',
-    protected: false,
   },
   {
     path: FAQ,
     name: 'FAQ',
-    protected: false,
   },
 ]
   
@@ -34,11 +31,13 @@ export const privateRoutes = [
   {
     path: PROFILE,
     name: 'Profile',
-    protected: true,
+  },
+  {
+    path: ACCOUNT,
+    name: 'Account',
   },
   {
     path: SIGNIN,
     name: 'SignIn',
-    protected: false,
   },
 ]

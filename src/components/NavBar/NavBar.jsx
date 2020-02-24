@@ -1,5 +1,6 @@
 import React from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -9,6 +10,11 @@ import Menu from '@material-ui/core/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import SideBar from '../../components/SideBar';
+
+import {
+  PROFILE,
+  ACCOUNT,
+} from '../../constants/routes';
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -55,8 +61,12 @@ const NavBar = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Account</MenuItem>
+      <Link to={PROFILE}>
+        <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      </Link>
+      <Link to={ACCOUNT}>
+        <MenuItem onClick={handleMenuClose}>Account</MenuItem>
+      </Link>      
     </Menu>
   );
 

@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
 } from 'react-router-dom';
 
 import NavBar from '../components/NavBar'
@@ -16,6 +15,7 @@ import Faq from '../routes/Faq';
 import Profile from '../routes/Profile';
 import Signin from '../routes/Signin';
 import Signup from '../routes/Signup';
+import Account from '../routes/Account';
 
 import {
   SIGNIN,
@@ -26,19 +26,8 @@ import {
   PROFILE,
   FAQ,
   ONBOARDING,
+  ACCOUNT,
 } from '../constants/routes'
-
-function Index() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
 
 function App() {
   return (
@@ -53,6 +42,7 @@ function App() {
         <Route path={TESTIMONIAL} component={Testimonial} />
         <Route path={PROFILE} component={Profile} />
         <Route path={FAQ} component={Faq} />
+        <Route path={ACCOUNT} component={Account} />
       </Switch>
     </Router>
   );
