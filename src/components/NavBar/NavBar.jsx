@@ -163,11 +163,11 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <SideBar/>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            Auturec
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
