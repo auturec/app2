@@ -6,10 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import {
@@ -17,18 +14,19 @@ import {
   privateRoutes,
 } from '../../constants/routes'
 
-
-
 const useStyles = makeStyles({
   list: {
     width: 250,
+  },
+  listItem: {
+    color: 'teal',
   },
   fullList: {
     width: 'auto',
   },
 });
 
-export default function SwipeableTemporaryDrawer() {
+const SideBar = () => {
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -54,7 +52,7 @@ export default function SwipeableTemporaryDrawer() {
           publicRoutes.map((route, index) => (
             <ListItem button key={index}>
               <Link to={route.path}>
-                <ListItemText primary={route.name} />
+                <ListItemText primary={route.name} className={classes.listItem} />
               </Link>
             </ListItem>            
           ))
@@ -66,7 +64,7 @@ export default function SwipeableTemporaryDrawer() {
           privateRoutes.map((route, index) => (
             <ListItem button key={index}>
               <Link to={route.path}>
-                <ListItemText primary={route.name} />
+                <ListItemText primary={route.name} className={classes.listItem} />
               </Link>
             </ListItem>            
           ))
@@ -86,7 +84,6 @@ export default function SwipeableTemporaryDrawer() {
       >
         <MenuIcon />
       </IconButton>
-      {/* <Button onClick={toggleDrawer('left', true)}>Open Left</Button> */}
       <SwipeableDrawer
         open={state.left}
         onClose={toggleDrawer('left', false)}
@@ -97,3 +94,5 @@ export default function SwipeableTemporaryDrawer() {
     </div>
   );
 }
+
+export default SideBar;

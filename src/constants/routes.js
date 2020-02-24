@@ -28,11 +28,6 @@ export const publicRoutes = [
     name: 'FAQ',
     protected: false,
   },
-  {
-    path: SIGNIN,
-    name: 'SignIn',
-    protected: false,
-  },
 ]
   
 export const privateRoutes = [
