@@ -5,6 +5,8 @@ import {
   Route,
 } from 'react-router-dom';
 
+import NavBar from '../components/NavBar'
+
 import Onboarding from '../routes/Onboarding';
 import Forum from '../routes/Forum';
 import ForumPost from '../routes/ForumPost'
@@ -28,6 +30,7 @@ import {
 function App() {
   return (
     <Router>
+      <NavBar/>
       <Switch>
         <Route exact path={SIGNIN} component={Signin} />
         <Route exact path={SIGNUP} component={Signup} />
