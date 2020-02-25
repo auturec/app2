@@ -31,6 +31,9 @@ const useStyles = makeStyles(theme => ({
   },
   faqList: {
     marginTop: '20px',
+  },
+  tab: {
+    color: 'teal',
   }
 }));
 
@@ -50,16 +53,20 @@ export default function Forum() {
 				<div className={classes.header}>How can we help you?</div>
         <AppBar position="static" color="default" className={classes.tabsPanel}>
           <Tabs
+            TabIndicatorProps={{ style: { background:'teal' } }}
             value={value}
             onChange={handleChange}
-            indicatorColor="primary"
-            textColor="primary"
             variant="fullWidth"
             aria-label="full width tabs example"
           >
             {
               topics.map((label, index) => (
-                <Tab label={label} {...a11yProps(index)} key={index} />
+                <Tab 
+                  label={label} 
+                  {...a11yProps(index)} 
+                  key={index} 
+                  className={classes.tab}
+                />
               ))
             }
           </Tabs>

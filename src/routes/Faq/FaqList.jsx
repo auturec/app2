@@ -46,7 +46,7 @@ const ExpansionPanelDetails = withStyles(theme => ({
   },
 }))(MuiExpansionPanelDetails);
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
 	faqQuestion: {
 		color: 'teal',
   },
@@ -54,8 +54,7 @@ const useStyles = makeStyles(theme => ({
 
 const FaqExpansionPanels = ({ faqList }) => {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState('panel1');
-  console.log(faqList)
+  const [expanded, setExpanded] = React.useState('panel0');
 
   const handleChange = panel => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -76,7 +75,6 @@ const FaqExpansionPanels = ({ faqList }) => {
             </ExpansionPanelDetails>
           </ExpansionPanel>
         ))
-
       }
     </div>
   );
