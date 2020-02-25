@@ -2,28 +2,71 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+
+import FaqList from './FaqList';
+import { FaqData } from './FaqData';
+
+function a11yProps(index) {
+  return {
+    id: `scrollable-auto-tab-${index}`,
+    'aria-controls': `scrollable-auto-tabpanel-${index}`,
+  };
+}
 
 const useStyles = makeStyles(theme => ({
 	paper: {
-		marginTop: theme.spacing(8),
-	},
-	avatar: {
-		margin: theme.spacing(1),
-		backgroundColor: theme.palette.secondary.main,
-	},
-	forum: {
-		width: '100%', // Fix IE 11 issue.
-		marginTop: theme.spacing(3),
-	},
+		marginTop: theme.spacing(10),
+  },
+  header: {
+    fontWeight: 'bold',
+    fontSize: '30px',
+    color: 'teal',
+    textAlign: 'center',
+  },
+  tabsPanel: {
+    marginTop: '30px',
+  },
+  faqList: {
+    marginTop: '20px',
+  }
 }));
 
 export default function Forum() {
-	const classes = useStyles()
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+  const topics = Object.keys(FaqData);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
 	return (
 		<Container component="main" maxWidth="sm">
 			<CssBaseline />
 			<div className={classes.paper}>
-				FAQ
+				<div className={classes.header}>How can we help you?</div>
+        <AppBar position="static" color="default" className={classes.tabsPanel}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+            variant="fullWidth"
+            aria-label="full width tabs example"
+          >
+            {
+              topics.map((label, index) => (
+                <Tab label={label} {...a11yProps(index)} key={index} />
+              ))
+            }
+          </Tabs>
+        </AppBar>
+        <div className={classes.faqList}>
+          <FaqList faqList={FaqData[topics[value]]} />
+        </div>
 			</div>
 		</Container>
 	)
