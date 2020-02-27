@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ChevronRight from '@material-ui/icons/ChevronRight';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { FORUM } from '../../constants/routes'
+import { FORUM } from 'constants/routes'
 
 const useStyles = makeStyles(() => ({
 	card: {

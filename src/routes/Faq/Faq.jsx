@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import FaqLogo from '../../assets/Faq/FaqLogo.svg'
+import FaqLogo from 'assets/Faq/FaqLogo.svg'
 import FaqList from './FaqList';
 import { FaqData } from './FaqData';
 

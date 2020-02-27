@@ -22,8 +22,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx}": [
+      "pretty-quick --staged",
+      "eslint --fix"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,7 +47,9 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-import": "^2.20.1",
     "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1"
   }

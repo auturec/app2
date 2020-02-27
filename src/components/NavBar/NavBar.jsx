@@ -9,12 +9,12 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
-import SideBar from '../../components/SideBar';
+import SideBar from 'components/SideBar';
 
 import {
   PROFILE,
   ACCOUNT,
-} from '../../constants/routes';
+} from 'constants/routes';
 
 const useStyles = makeStyles(theme => ({
   grow: {

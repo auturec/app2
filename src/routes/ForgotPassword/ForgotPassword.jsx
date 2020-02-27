@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import FullLogo from '../../assets/Logo/Full_Logo.svg';
+import FullLogo from 'assets/Logo/Full_Logo.svg';
 
 const Copyright = () => {
   return (

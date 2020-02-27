@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import SearchBar from './SearchBar';
 import ForumList from './ForumList';
-import ForumLogo from '../../assets/Forum/ForumLogo.svg';
+import ForumLogo from 'assets/Forum/ForumLogo.svg';
 
 const useStyles = makeStyles(theme => ({
   paper: {

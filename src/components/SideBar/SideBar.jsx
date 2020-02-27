@@ -12,7 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {
   publicRoutes,
   privateRoutes,
-} from '../../constants/routes'
+} from 'constants/routes'
 
 const useStyles = makeStyles({
   list: {

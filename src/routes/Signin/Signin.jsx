@@ -14,8 +14,8 @@ import Container from '@material-ui/core/Container';
 import {
   FORGOT_PASSWORD,
   SIGNUP,
-} from '../../constants/routes';
-import FullLogo from '../../assets/Logo/Full_Logo.svg';
+} from 'constants/routes';
+import FullLogo from 'assets/Logo/Full_Logo.svg';
 
 const Copyright = () => {
   return (
