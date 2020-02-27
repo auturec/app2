@@ -5,9 +5,9 @@ import './App.css';
 const Auturec = () => {
   return (
     <div>
-      <App/>
+      <App />
     </div>
   );
-}
+};
 
 export default Auturec;
