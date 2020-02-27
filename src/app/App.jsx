@@ -36,16 +36,16 @@ function App() {
     <Router>
       <NavBar/>
       <Switch>
-        <Route path={ONBOARDING} exact component={Onboarding} />
-        <Route path={SIGNIN} component={Signin} />
-        <Route path={SIGNUP} component={Signup} />
-        <Route path={FORUM} component={Forum} />
-        <Route path={FORUM_ID} component={ForumPost} />
-        <Route path={TESTIMONIAL} component={Testimonial} />
-        <Route path={PROFILE} component={Profile} />
-        <Route path={FAQ} component={Faq} />
-        <Route path={ACCOUNT} component={Account} />
-        <Route path={FORGOT_PASSWORD} component={ForgotPassword} />
+        <Route exact path={ONBOARDING} exact component={Onboarding} />
+        <Route exact path={SIGNIN} component={Signin} />
+        <Route exact path={SIGNUP} component={Signup} />
+        <Route exact path={FORUM} component={Forum} />
+        <Route exact path={FORUM_ID} component={ForumPost} />
+        <Route exact exact path={TESTIMONIAL} component={Testimonial} />
+        <Route exact path={PROFILE} component={Profile} />
+        <Route exact path={FAQ} component={Faq} />
+        <Route exact path={ACCOUNT} component={Account} />
+        <Route exact path={FORGOT_PASSWORD} component={ForgotPassword} />
       </Switch>
     </Router>
   );
