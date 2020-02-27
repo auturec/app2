@@ -12,21 +12,21 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const CreateQuestion = () => {
+const BackButton = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.wrapper}>
-      <Grid container alignItems="flex-start" justify="flex-end" direction="row">
+      <Grid container alignItems="flex-start" justify="flex-start" direction="row">
         <Button 
           variant="contained" 
           className={classes.button}
         >
-          Have a question?
+          Back
         </Button>
       </Grid>
     </div>
   )
 }
 
-export default CreateQuestion;
+export default BackButton;

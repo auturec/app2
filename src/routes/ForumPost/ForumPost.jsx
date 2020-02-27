@@ -1,30 +1,24 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
+import Post from './Post';
+import { ForumPostData } from './ForumPostData';
 
-const useStyles = makeStyles(theme => ({
-	paper: {
-		marginTop: theme.spacing(8),
-	},
-	avatar: {
-		margin: theme.spacing(1),
-		backgroundColor: theme.palette.secondary.main,
-	},
-	forum: {
-		width: '100%', // Fix IE 11 issue.
-		marginTop: theme.spacing(3),
-	},
+const useStyles = makeStyles(() => ({
+  forumList: {
+    marginTop: '10px',
+  }
 }));
-
-export default function Faq() {
-	const classes = useStyles()
-	return (
-		<Container component="main" maxWidth="sm">
-			<CssBaseline />
-			<div className={classes.paper}>
-				Forum Post
-			</div>
-		</Container>
-	)
+const ForumList = () => {
+  const classes = useStyles();
+  return (
+    <div className={classes.forumList}>
+      {
+        ForumPostData.map(post => (
+          <Post author={post.author} id={post.id} date={post.date} question={post.question} key={post.id}/>
+        ))
+      }
+    </div>
+  );
 }
+
+export default ForumList;

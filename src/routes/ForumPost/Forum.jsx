@@ -2,9 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import SearchBar from './SearchBar';
-import ForumList from './ForumList';
-import CreateQuestion from './CreateQuestion';
+import ForumPost from './ForumPost';
+import BackButton from './BackButton';
 import ForumLogo from 'assets/Forum/ForumLogo.svg';
 
 const useStyles = makeStyles(theme => ({
@@ -22,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     margin: '0px auto',
     width: '150px',
   },
-  forumListWrapper: {
+  forumPostWrapper: {
     paddingTop: '10px',
   },
   endOfForum: {
@@ -40,10 +39,9 @@ const Forum = () => {
       <div className={classes.paper}>
         <div className={classes.header}>Community Forum</div>
         <img src={ForumLogo} alt="" className={classes.forumLogo} />
-        <div className={classes.forumListWrapper}>
-          <CreateQuestion/>
-          <SearchBar />
-          <ForumList />
+        <div className={classes.forumPostWrapper}>
+          <BackButton/>
+          <ForumPost />
           <div className={classes.endOfForum}>
             No more to show
           </div>
