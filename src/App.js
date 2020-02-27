@@ -2,7 +2,7 @@ import React from 'react';
 import App from './app';
 import './App.css';
 
-function Auturec() {
+const Auturec = () => {
   return (
     <div>
       <App/>
