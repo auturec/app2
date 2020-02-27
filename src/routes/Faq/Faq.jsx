@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-
+import FaqLogo from '../../assets/Faq/FaqLogo.svg'
 import FaqList from './FaqList';
 import { FaqData } from './FaqData';
 
@@ -34,6 +34,11 @@ const useStyles = makeStyles(theme => ({
   },
   tab: {
     color: 'teal',
+  },
+  faqLogo: {
+    display: 'block',
+    margin: '0px auto',
+    width: '100px',
   }
 }));
 
@@ -51,6 +56,7 @@ export default function Forum() {
 			<CssBaseline />
 			<div className={classes.paper}>
 				<div className={classes.header}>How can we help you?</div>
+        <img src={FaqLogo} alt="" className={classes.faqLogo}/>
         <AppBar position="static" color="default" className={classes.tabsPanel}>
           <Tabs
             TabIndicatorProps={{ style: { background:'teal' } }}
