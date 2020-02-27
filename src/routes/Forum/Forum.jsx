@@ -4,6 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import SearchBar from './SearchBar';
 import ForumList from './ForumList';
+import CreateQuestion from './CreateQuestion';
 import ForumLogo from 'assets/Forum/ForumLogo.svg';
 
 const useStyles = makeStyles(theme => ({
@@ -40,6 +41,7 @@ const Forum = () => {
         <div className={classes.header}>Have a question?</div>
         <img src={ForumLogo} alt="" className={classes.forumLogo} />
         <div className={classes.forumListWrapper}>
+          <CreateQuestion/>
           <SearchBar />
           <ForumList />
           <div className={classes.endOfForum}>
