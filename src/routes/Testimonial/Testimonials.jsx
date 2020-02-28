@@ -5,34 +5,32 @@ import Container from '@material-ui/core/Container';
 
 import Testimonial from './Testimonial';
 
-import { TestimonialData } from './TestimonialData';
+import { TestimonialsData } from './TestimonialsData';
 
 const useStyles = makeStyles(theme => ({
-	paper: {
-    marginTop: theme.spacing(10),
-	},
+  paper: {
+    marginTop: theme.spacing(10)
+  }
 }));
 
 const Testimonials = () => {
-	const classes = useStyles()
-	return (
-		<Container component="main" maxWidth="sm">
-			<CssBaseline />
-			<div className={classes.paper}>
-        {
-          TestimonialData.map(testimonial => (
-            <Testimonial 
-              key={testimonial.id}
-              userName={testimonial.userName}
-              profilePic={testimonial.profilePic}
-              userInfo={testimonial.userInfo}
-              comment={testimonial.comment}
-            />
-          ))
-        }
-			</div>
-		</Container>
-	)
-}
+  const classes = useStyles();
+  return (
+    <Container component="main" maxWidth="sm">
+      <CssBaseline />
+      <div className={classes.paper}>
+        {TestimonialsData.map(testimonial => (
+          <Testimonial
+            key={testimonial.id}
+            userName={testimonial.userName}
+            profilePic={testimonial.profilePic}
+            userInfo={testimonial.userInfo}
+            comment={testimonial.comment}
+          />
+        ))}
+      </div>
+    </Container>
+  );
+};
 
 export default Testimonials;

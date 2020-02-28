@@ -8,28 +8,28 @@ import FormControl from '@material-ui/core/FormControl';
 import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles(() => ({
-  searchBar: {
-    marginTop: '10px',
+  searchBarContainer: {
+    marginTop: '10px'
   }
 }));
 
 const SearchBar = () => {
   const classes = useStyles();
-  const [query, handleQuery] = React.useState("");
+  const [query, handleQuery] = React.useState('');
 
   const handleSubmitQuery = () => {
-    console.log(query)
+    console.log(query);
   };
 
   const handleMouseDownPassword = event => {
     event.preventDefault();
   };
   return (
-    <div className={classes.searchBar}>
+    <div className={classes.searchBarContainer}>
       <FormControl fullWidth variant="outlined">
         <InputLabel>Search</InputLabel>
         <OutlinedInput
-          type='text'
+          type="text"
           value={query}
           onChange={e => handleQuery(e.target.value)}
           endAdornment={
@@ -40,7 +40,7 @@ const SearchBar = () => {
                 onMouseDown={handleMouseDownPassword}
                 edge="end"
               >
-                <SearchIcon/>
+                <SearchIcon />
               </IconButton>
             </InputAdornment>
           }
@@ -49,6 +49,6 @@ const SearchBar = () => {
       </FormControl>
     </div>
   );
-}
+};
 
 export default SearchBar;
