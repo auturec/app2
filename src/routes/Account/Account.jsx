@@ -8,34 +8,32 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(10)
   },
   changePassword: {
     color: 'teal',
     fontWeight: 'bold',
     fontSize: '16px',
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(4)
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(1)
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
+    margin: theme.spacing(3, 0, 2)
+  }
 }));
 
-export default function Account() {
-  const classes = useStyles()
+const Account = () => {
+  const classes = useStyles();
   return (
     <Container component="main" maxWidth="sm">
       <CssBaseline />
       <div className={classes.paper}>
         <Grid container>
           <Grid item xs={12} sm={4}>
-            <div className={classes.changePassword}>
-              Change Password
-            </div>
+            <div className={classes.changePassword}>Change Password</div>
           </Grid>
           <Grid item xs={12} sm={8}>
             <form className={classes.form} noValidate>
@@ -86,5 +84,7 @@ export default function Account() {
         </Grid>
       </div>
     </Container>
-  )
-}
+  );
+};
+
+export default Account;
