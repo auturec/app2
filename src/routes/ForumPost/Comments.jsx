@@ -4,14 +4,14 @@ import Comment from './Comment';
 import { comments } from './CommentData';
 
 const useStyles = makeStyles(() => ({
-  forumList: {
+  commentsContainer: {
     marginTop: '10px',
   }
 }));
 const Comments = () => {
   const classes = useStyles();
   return (
-    <div className={classes.forumList}>
+    <div className={classes.commentsContainer}>
       {
         comments.map(comment => (
           <Comment id={comment.id} date={comment.date} question={comment.question} key={comment.id}/>

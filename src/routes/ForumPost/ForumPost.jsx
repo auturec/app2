@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     margin: '0px auto',
     width: '150px',
   },
-  forumPostWrapper: {
+  forumPostContainer: {
     paddingTop: '10px',
   },
 }));
@@ -35,7 +35,7 @@ const Forum = () => {
       <div className={classes.paper}>
         <div className={classes.header}>Community Forum</div>
         <img src={ForumLogo} alt="" className={classes.forumLogo} />
-        <div className={classes.forumPostWrapper}>
+        <div className={classes.forumPostContainer}>
           <BackButton/>
           <Question question="Can my child with Autism attend school?" date="12 Feb 2020"/>
           <Comments />
