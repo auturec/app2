@@ -4,27 +4,21 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles(theme => ({
-	paper: {
-		marginTop: theme.spacing(8),
-	},
-	avatar: {
-		margin: theme.spacing(1),
-		backgroundColor: theme.palette.secondary.main,
-	},
-	forum: {
-		width: '100%', // Fix IE 11 issue.
-		marginTop: theme.spacing(3),
-	},
+  paper: {
+    marginTop: theme.spacing(10)
+  }
 }));
 
-export default function Profile() {
-	const classes = useStyles()
-	return (
-		<Container component="main" maxWidth="sm">
-			<CssBaseline />
-			<div className={classes.paper}>
-				Profile
-			</div>
-		</Container>
-	)
-}
+const Profile = () => {
+  const classes = useStyles();
+  return (
+    <Container component="main" maxWidth="sm">
+      <CssBaseline />
+      <div className={classes.paper}>
+        Profile (Requires process to track child progress)
+      </div>
+    </Container>
+  );
+};
+
+export default Profile;
