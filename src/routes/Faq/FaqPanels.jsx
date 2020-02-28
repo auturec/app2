@@ -10,16 +10,16 @@ const ExpansionPanel = withStyles({
     border: '1px solid rgba(0, 0, 0, .125)',
     boxShadow: 'none',
     '&:not(:last-child)': {
-      borderBottom: 0,
+      borderBottom: 0
     },
     '&:before': {
-      display: 'none',
+      display: 'none'
     },
     '&$expanded': {
-      margin: 'auto',
-    },
+      margin: 'auto'
+    }
   },
-  expanded: {},
+  expanded: {}
 })(MuiExpansionPanel);
 
 const ExpansionPanelSummary = withStyles({
@@ -29,32 +29,32 @@ const ExpansionPanelSummary = withStyles({
     marginBottom: -1,
     minHeight: 56,
     '&$expanded': {
-      minHeight: 56,
-    },
+      minHeight: 56
+    }
   },
   content: {
     '&$expanded': {
-      margin: '12px 0',
-    },
+      margin: '12px 0'
+    }
   },
-  expanded: {},
+  expanded: {}
 })(MuiExpansionPanelSummary);
 
 const ExpansionPanelDetails = withStyles(theme => ({
   root: {
-    padding: theme.spacing(2),
-  },
+    padding: theme.spacing(2)
+  }
 }))(MuiExpansionPanelDetails);
 
 const useStyles = makeStyles(() => ({
-	faqQuestion: {
-		color: 'teal',
-  },
-}))
+  faqQuestion: {
+    color: 'teal'
+  }
+}));
 
-const FaqExpansionPanels = ({ faqList }) => {
+const FaqExpansionPanels = ({ faqs }) => {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState('panel0');
+  const [expanded, setExpanded] = React.useState(`panel${faqs[0].id}`);
 
   const handleChange = panel => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -62,22 +62,28 @@ const FaqExpansionPanels = ({ faqList }) => {
 
   return (
     <div>
-      {
-        faqList.map((faqItem, index) => (
-          <ExpansionPanel square expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)} key={index}>
-            <ExpansionPanelSummary aria-controls={`panel${index}d-content`} id={`panel${index}d-content`}>
-              <Typography className={classes.faqQuestion}>{ faqItem.question }</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                { faqItem.answer }
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-        ))
-      }
+      {faqs.map(faq => (
+        <ExpansionPanel
+          square
+          expanded={expanded === `panel${faq.id}`}
+          onChange={handleChange(`panel${faq.id}`)}
+          key={faq.id}
+        >
+          <ExpansionPanelSummary
+            aria-controls={`panel${faq.id}d-content`}
+            id={`panel${faq.id}d-content`}
+          >
+            <Typography className={classes.faqQuestion}>
+              {faq.question}
+            </Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Typography>{faq.answer}</Typography>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      ))}
     </div>
   );
-}
+};
 
 export default FaqExpansionPanels;
