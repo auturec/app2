@@ -1,38 +1,59 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
+import Avatar from '@material-ui/core/Avatar';
 
-import Post from './Post';
-
-import { TestimonialData } from './TestimonialData';
-
-const useStyles = makeStyles(theme => ({
-	paper: {
-    marginTop: theme.spacing(10),
-	},
+const useStyles = makeStyles(() => ({
+	card: {
+    border: '1px teal solid',
+    width: '100%',
+    borderRadius: '10px',
+    padding: '20px',
+    margin: '10px 0px',
+  },
+  header: {
+    display: 'flex',
+  },
+  body: {
+    margin: '10px',
+    color: 'teal',
+  },
+  profilePic: {
+    margin: '10px',
+  },
+  userInfo: {
+    fontSize: '20px',
+    color: 'grey',
+    margin: '10px',
+    fontWeight: 'bold',
+  },
+  large: {
+    width: '60px',
+    height: '60px',
+  },
 }));
 
-const Testimonial = () => {
-	const classes = useStyles()
-	return (
-		<Container component="main" maxWidth="sm">
-			<CssBaseline />
-			<div className={classes.paper}>
-        {
-          TestimonialData.map(post => (
-            <Post 
-              key={post.id}
-              userName={post.userName}
-              profilePic={post.profilePic}
-              userInfo={post.userInfo}
-              comment={post.comment}
-            />
-          ))
-        }
-			</div>
-		</Container>
-	)
+const Testimonial = ({ userName, profilePic, userInfo, comment }) => {
+  const classes = useStyles()
+  return (
+    <div className={classes.card}>
+      <div className={classes.header}>
+        <div className={classes.profilePic}>
+          <Avatar alt={userName} src={profilePic} className={classes.large} />
+        </div>
+        <div className={classes.userInfo}>
+          <div>
+            {userName}
+          </div>
+          <div>
+            {userInfo}
+          </div>
+        </div>
+      </div>
+      <div className={classes.body}>
+        {comment}
+      </div>
+    </div>
+  )
 }
 
 export default Testimonial;
