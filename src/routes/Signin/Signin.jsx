@@ -15,7 +15,7 @@ import {
   FORGOT_PASSWORD,
   SIGNUP,
 } from 'constants/routes';
-import FullLogo from 'assets/Logo/Full_Logo.svg';
+import FullLogo from 'assets/Logo/FullLogo.svg';
 
 const Copyright = () => {
   return (
