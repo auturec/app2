@@ -5,11 +5,11 @@ import {
   Route,
 } from 'react-router-dom';
 
-import NavBar from 'components/NavBar'
+import NavBar from 'components/NavBar';
 
 import Onboarding from 'routes/Onboarding';
 import Forum from 'routes/Forum';
-import ForumPost from 'routes/ForumPost'
+import ForumPost from 'routes/ForumPost';
 import Testimonial from 'routes/Testimonial';
 import Faq from 'routes/Faq';
 import Profile from 'routes/Profile';
@@ -29,7 +29,7 @@ import {
   ONBOARDING,
   ACCOUNT,
   FORGOT_PASSWORD,
-} from 'constants/routes'
+} from 'constants/routes';
 
 const App = () => {
   return (
@@ -49,6 +49,6 @@ const App = () => {
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;

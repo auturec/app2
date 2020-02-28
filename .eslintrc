@@ -28,5 +28,13 @@
     "Request": true,
     "fetch": true
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+  },
   "parser": "babel-eslint"
 }

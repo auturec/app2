@@ -3,12 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Carousel } from 'antd';
-
-import Slide from './Slide'
 import NameLogo from 'assets/Logo/Name.svg';
 import CharacterSlide1 from 'assets/Onboarding/CharacterSlide1.svg';
 import CharacterSlide2 from 'assets/Onboarding/CharacterSlide2.svg';
 import CharacterSlide3 from 'assets/Onboarding/CharacterSlide3.svg';
+import Slide from './Slide'
 
 const useStyles = makeStyles(theme => ({
   paper: {
