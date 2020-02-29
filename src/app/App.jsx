@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import NavBar from 'components/NavBar';
 
@@ -18,6 +14,9 @@ import Signup from 'routes/Signup';
 import Account from 'routes/Account';
 import ForgotPassword from 'routes/ForgotPassword';
 
+// Games Components
+import Associate from 'routes/Cognitive/Associate';
+
 import {
   SIGNIN,
   SIGNUP,
@@ -29,12 +28,13 @@ import {
   ONBOARDING,
   ACCOUNT,
   FORGOT_PASSWORD,
+  ASSOCIATE
 } from 'constants/routes';
 
 const App = () => {
   return (
     <Router>
-      <NavBar/>
+      <NavBar />
       <Switch>
         <Route exact path={ONBOARDING} component={Onboarding} />
         <Route exact path={SIGNIN} component={Signin} />
@@ -46,6 +46,7 @@ const App = () => {
         <Route exact path={FAQ} component={Faq} />
         <Route exact path={ACCOUNT} component={Account} />
         <Route exact path={FORGOT_PASSWORD} component={ForgotPassword} />
+        <Route exact path={ASSOCIATE} component={Associate} />
       </Switch>
     </Router>
   );
