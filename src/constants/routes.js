@@ -38,7 +38,7 @@ export const publicRoutes = [
   },
   {
     path: TILES,
-    name: 'TIles'
+    name: 'Tiles'
   }
 ];
 

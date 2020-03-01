@@ -22,19 +22,11 @@ import Clock from 'assets/images/associate/furniture/grandfatherclock.svg';
 import TableLamp from 'assets/images/associate/furniture/tablelamp.svg';
 import StandLamp from 'assets/images/associate/furniture/standlamp.svg';
 
-const ImageStructure = {
+export const ImageMap = {
   Vehicles: [Bike, Scooter, Train, Truck, Wheel],
   Food: [Bento, Carrot, Onion, Sushi],
   Animals: [Cow, Pig, Hen, Deer, Crab],
   Furniture: [Carpet, Chair, Clock, TableLamp, StandLamp]
 };
 
-export const ImageKeyList = () => {
-  return Object.keys(ImageStructure);
-};
-
-export const ImageMap = () => {
-  return ImageStructure;
-};
-
-export default { ImageMap, ImageKeyList };
+export const ImageKeyList = Object.keys(ImageMap);
