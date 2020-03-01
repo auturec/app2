@@ -12,33 +12,33 @@ export const ONBOARDING = '/';
 export const publicRoutes = [
   {
     path: ONBOARDING,
-    name: 'Home',
+    name: 'Home'
   },
   {
     path: TESTIMONIAL,
-    name: 'Testimonial',
+    name: 'Testimonial'
   },
   {
     path: FORUM,
-    name: 'Forum',
+    name: 'Forum'
   },
   {
     path: FAQ,
-    name: 'FAQ',
-  },
-]
-  
+    name: 'FAQ'
+  }
+];
+
 export const privateRoutes = [
   {
     path: PROFILE,
-    name: 'Profile',
+    name: 'Profile'
   },
   {
     path: ACCOUNT,
-    name: 'Account',
+    name: 'Account'
   },
   {
     path: SIGNIN,
-    name: 'SignIn',
-  },
-]
+    name: 'SignIn'
+  }
+];

@@ -9,31 +9,32 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import {
-  publicRoutes,
-  privateRoutes,
-} from 'constants/routes'
+import { publicRoutes, privateRoutes } from 'constants/routes';
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: 250
   },
   listItem: {
-    color: 'teal',
+    color: 'teal'
   },
   fullList: {
-    width: 'auto',
-  },
+    width: 'auto'
+  }
 });
 
 const SideBar = () => {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    left: false,
+    left: false
   });
 
   const toggleDrawer = (side, open) => event => {
-    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
       return;
     }
 
@@ -48,27 +49,23 @@ const SideBar = () => {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {
-          publicRoutes.map((route, index) => (
-            <Link to={route.path} key={index}>
-              <ListItem button>
-                <ListItemText primary={route.name} className={classes.listItem} />
-              </ListItem>              
-            </Link>
-          ))
-        }
+        {publicRoutes.map(route => (
+          <Link to={route.path} key={`public-link-${route.name}`}>
+            <ListItem button>
+              <ListItemText primary={route.name} className={classes.listItem} />
+            </ListItem>
+          </Link>
+        ))}
       </List>
       <Divider />
       <List>
-        {
-          privateRoutes.map((route, index) => (
-            <Link to={route.path} key={index}>
-              <ListItem button>
-                <ListItemText primary={route.name} className={classes.listItem} />
-              </ListItem>              
-            </Link>         
-          ))
-        }
+        {privateRoutes.map(route => (
+          <Link to={route.path} key={`private-link-${route.name}`}>
+            <ListItem button>
+              <ListItemText primary={route.name} className={classes.listItem} />
+            </ListItem>
+          </Link>
+        ))}
       </List>
     </div>
   );
@@ -93,6 +90,6 @@ const SideBar = () => {
       </SwipeableDrawer>
     </div>
   );
-}
+};
 
 export default SideBar;

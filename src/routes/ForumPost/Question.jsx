@@ -5,7 +5,7 @@ import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles(() => ({
   card: {
-    width: '100%',
+    width: '100%'
   },
   button: {
     display: 'flex',
@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'start',
     textTransform: 'none',
     width: '100%',
-    padding: '20px',
+    padding: '20px'
   },
   questionContainer: {
     color: 'teal',
@@ -23,30 +23,26 @@ const useStyles = makeStyles(() => ({
   },
   question: {
     fontSize: '20px',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   date: {
     paddingTop: '10px',
     fontSize: '14px',
-    paddingBottom: '20px',
+    paddingBottom: '20px'
   }
 }));
 
 const Question = ({ question, date }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <div className={classes.button}>
       <div className={classes.questionContainer}>
-        <Typography className={classes.question}>
-          Q: {question}
-        </Typography>
-        <Typography className={classes.date}>
-          {date}
-        </Typography>
-        <Divider/>
+        <Typography className={classes.question}>Q: {question}</Typography>
+        <Typography className={classes.date}>{date}</Typography>
+        <Divider />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Question;

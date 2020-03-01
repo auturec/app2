@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import NavBar from 'components/NavBar';
 
@@ -28,13 +24,13 @@ import {
   FAQ,
   ONBOARDING,
   ACCOUNT,
-  FORGOT_PASSWORD,
+  FORGOT_PASSWORD
 } from 'constants/routes';
 
 const App = () => {
   return (
     <Router>
-      <NavBar/>
+      <NavBar />
       <Switch>
         <Route exact path={ONBOARDING} component={Onboarding} />
         <Route exact path={SIGNIN} component={Signin} />

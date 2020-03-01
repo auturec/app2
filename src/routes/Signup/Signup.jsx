@@ -9,9 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-import {
-  SIGNIN,
-} from 'constants/routes';
+import { SIGNIN } from 'constants/routes';
 import FullLogo from 'assets/Logo/FullLogo.svg';
 
 const Copyright = () => {
@@ -25,26 +23,26 @@ const Copyright = () => {
       {'.'}
     </Typography>
   );
-}
+};
 
 const useStyles = makeStyles(theme => ({
   paper: {
     marginTop: theme.spacing(10),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   fullLogo: {
     margin: '0px auto',
-    width: '100px',
+    width: '100px'
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(3)
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
+    margin: theme.spacing(3, 0, 2)
+  }
 }));
 
 const SignUp = () => {
@@ -54,7 +52,7 @@ const SignUp = () => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <img src={FullLogo} alt="" className={classes.fullLogo}/>
+        <img src={FullLogo} alt="" className={classes.fullLogo} />
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
@@ -130,6 +128,6 @@ const SignUp = () => {
       </Box>
     </Container>
   );
-}
+};
 
 export default SignUp;

@@ -11,10 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-import {
-  FORGOT_PASSWORD,
-  SIGNUP,
-} from 'constants/routes';
+import { FORGOT_PASSWORD, SIGNUP } from 'constants/routes';
 import FullLogo from 'assets/Logo/FullLogo.svg';
 
 const Copyright = () => {
@@ -28,28 +25,28 @@ const Copyright = () => {
       {'.'}
     </Typography>
   );
-}
+};
 
 const useStyles = makeStyles(theme => ({
   paper: {
     marginTop: theme.spacing(10),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   fullLogo: {
     margin: '0px auto',
-    width: '100px',
+    width: '100px'
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(1)
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: theme.spacing(3, 0, 2)
   },
   subtext: {
-    color: '#3f51b5',
+    color: '#3f51b5'
   }
 }));
 
@@ -60,7 +57,7 @@ const Signin = () => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <img src={FullLogo} alt="" className={classes.fullLogo}/>
+        <img src={FullLogo} alt="" className={classes.fullLogo} />
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
@@ -102,13 +99,17 @@ const Signin = () => {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link to={FORGOT_PASSWORD} variant="body2" className={classes.subtext}>
+              <Link
+                to={FORGOT_PASSWORD}
+                variant="body2"
+                className={classes.subtext}
+              >
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
               <Link to={SIGNUP} variant="body2" className={classes.subtext}>
-                {"Don't have an account? Sign Up"}
+                Don&apos;t have an account? Sign Up
               </Link>
             </Grid>
           </Grid>
@@ -119,6 +120,6 @@ const Signin = () => {
       </Box>
     </Container>
   );
-}
+};
 
 export default Signin;

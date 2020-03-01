@@ -11,28 +11,25 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import SideBar from 'components/SideBar';
 
-import {
-  PROFILE,
-  ACCOUNT,
-} from 'constants/routes';
+import { PROFILE, ACCOUNT } from 'constants/routes';
 
 const useStyles = makeStyles(theme => ({
   grow: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   appBar: {
-    background: 'teal',
+    background: 'teal'
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   title: {
     display: 'none',
     color: 'white',
     [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
+      display: 'block'
+    }
+  }
 }));
 
 const NavBar = () => {
@@ -66,7 +63,7 @@ const NavBar = () => {
       </Link>
       <Link to={ACCOUNT}>
         <MenuItem onClick={handleMenuClose}>Account</MenuItem>
-      </Link>      
+      </Link>
     </Menu>
   );
 
@@ -74,7 +71,7 @@ const NavBar = () => {
     <div className={classes.grow}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <SideBar/>
+          <SideBar />
           <Typography className={classes.title} variant="h6" noWrap>
             Auturec
           </Typography>
@@ -96,6 +93,6 @@ const NavBar = () => {
       {renderMenu}
     </div>
   );
-}
+};
 
 export default NavBar;
