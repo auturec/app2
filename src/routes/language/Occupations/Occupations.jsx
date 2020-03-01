@@ -1,12 +1,12 @@
-import React, { useReducer, useEffect } from "react";
-import { useToasts } from "react-toast-notifications";
-import { Grid, Button } from "@material-ui/core";
+import React, { useReducer, useEffect } from 'react';
+import { useToasts } from 'react-toast-notifications';
+import { Grid, Button } from '@material-ui/core';
 
-import DataLoader from "components/dataLoader";
-import { getRandomElement, getNRandomElements } from "utils/randomUtils";
-import { occupationData } from "./data";
+import DataLoader from 'components/DataLoader';
+import { getRandomElement, getNRandomElements } from 'utils/randomUtils';
+import { occupationData } from 'routes/Language/Occupations/data';
 
-import "./Occupations.scss";
+import 'routes/Language/Occupations/Occupations.scss';
 
 const Occupations = ({ handleBackToMenu }) => {
   const { addToast } = useToasts();
@@ -14,7 +14,7 @@ const Occupations = ({ handleBackToMenu }) => {
     isLoading: true,
     occupations: [],
     answer: null,
-    gameType: "EXPRESSIVE",
+    gameType: 'EXPRESSIVE',
     isCompleted: false
   });
 
@@ -32,7 +32,7 @@ const Occupations = ({ handleBackToMenu }) => {
         await setState({
           occupations: finalOccupations,
           answer: finalAnswer,
-          gameType: Math.random() < 0.5 ? "RECEPTIVE" : "EXPRESSIVE",
+          gameType: Math.random() < 0.5 ? 'RECEPTIVE' : 'EXPRESSIVE',
           isLoading: false
         });
       }
@@ -59,7 +59,7 @@ const Occupations = ({ handleBackToMenu }) => {
     await setState({
       occupations: finalOccupations,
       answer: finalAnswer,
-      gameType: Math.random() < 0.5 ? "RECEPTIVE" : "EXPRESSIVE",
+      gameType: Math.random() < 0.5 ? 'RECEPTIVE' : 'EXPRESSIVE',
       isLoading: false
     });
   };
@@ -68,7 +68,7 @@ const Occupations = ({ handleBackToMenu }) => {
     const isCorrect = option === state.answer.name;
     if (isCorrect) {
       addToast(`Great job!`, {
-        appearance: "success",
+        appearance: 'success',
         autoDismiss: true
       });
       setState({
@@ -76,7 +76,7 @@ const Occupations = ({ handleBackToMenu }) => {
       });
     } else {
       addToast(`Oh dear, do try again!`, {
-        appearance: "error",
+        appearance: 'error',
         autoDismiss: true
       });
     }
@@ -90,7 +90,7 @@ const Occupations = ({ handleBackToMenu }) => {
     );
   }
 
-  if (state.gameType === "EXPRESSIVE") {
+  if (state.gameType === 'EXPRESSIVE') {
     return (
       <Grid container justify="center">
         <Grid item xs={12} sm={8} md={6} lg={4}>
@@ -105,8 +105,8 @@ const Occupations = ({ handleBackToMenu }) => {
             <div className="column is-full is-half-tablet occupations__expressive--answers">
               <p className="is-size-5 occupations__expressive--description">
                 {state.isCompleted
-                  ? "Great job! What next?"
-                  : "Say out the occupation before selecting the option!"}
+                  ? 'Great job! What next?'
+                  : 'Say out the occupation before selecting the option!'}
               </p>
               {!state.isCompleted &&
                 state.occupations.map(o => (
@@ -160,8 +160,8 @@ const Occupations = ({ handleBackToMenu }) => {
       <div className="column is-full is-half-tablet occupations__receptive--options">
         <p className="is-size-5 occupations__receptive--description">
           {state.isCompleted
-            ? "Great job! What next?"
-            : "Tap the photo that best shows the above occupation!"}
+            ? 'Great job! What next?'
+            : 'Tap the photo that best shows the above occupation!'}
         </p>
         {state.isCompleted && (
           <Grid container justify="center">

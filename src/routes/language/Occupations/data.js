@@ -1,76 +1,76 @@
-import * as OccupationSvg from "assets/images/languages/occupations";
+import * as OccupationSvg from 'assets/images/languages/occupations';
 
 export const occupationData = [
   {
     svg: OccupationSvg.Astronaut,
-    name: "Astronaut"
+    name: 'Astronaut'
   },
   {
     svg: OccupationSvg.Baker,
-    name: "Baker"
+    name: 'Baker'
   },
   {
     svg: OccupationSvg.Barber,
-    name: "Barber"
+    name: 'Barber'
   },
   {
     svg: OccupationSvg.Cashier,
-    name: "Cashier"
+    name: 'Cashier'
   },
   {
     svg: OccupationSvg.Chef,
-    name: "Chef"
+    name: 'Chef'
   },
   {
     svg: OccupationSvg.Doctor,
-    name: "Doctor"
+    name: 'Doctor'
   },
   {
     svg: OccupationSvg.Farmer,
-    name: "Farmer"
+    name: 'Farmer'
   },
   {
     svg: OccupationSvg.Fireman,
-    name: "Fireman"
+    name: 'Fireman'
   },
   {
     svg: OccupationSvg.Librarian,
-    name: "Librarian"
+    name: 'Librarian'
   },
   {
     svg: OccupationSvg.Nurse,
-    name: "Nurse"
+    name: 'Nurse'
   },
   {
     svg: OccupationSvg.Painter,
-    name: "Painter"
+    name: 'Painter'
   },
   {
     svg: OccupationSvg.Pilot,
-    name: "Pilot"
+    name: 'Pilot'
   },
   {
     svg: OccupationSvg.Policeman,
-    name: "Policeman"
+    name: 'Policeman'
   },
   {
     svg: OccupationSvg.Scientist,
-    name: "Scientist"
+    name: 'Scientist'
   },
   {
     svg: OccupationSvg.Student,
-    name: "Student"
+    name: 'Student'
   },
   {
     svg: OccupationSvg.Teacher,
-    name: "Teacher"
+    name: 'Teacher'
   },
   {
     svg: OccupationSvg.Vet,
-    name: "Vet"
+    name: 'Vet'
   },
   {
     svg: OccupationSvg.Waiter,
-    name: "Waiter"
+    name: 'Waiter'
   }
 ];

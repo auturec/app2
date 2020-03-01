@@ -1,5 +1,5 @@
-import React from "react";
-import { ToastProvider } from "react-toast-notifications";
+import React from 'react';
+import { ToastProvider } from 'react-toast-notifications';
 
 const AppProviders = ({ children }) => {
   return <ToastProvider>{children}</ToastProvider>;

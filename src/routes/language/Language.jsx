@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import { Button } from "@material-ui/core";
+import React, { useState } from 'react';
+import { Button } from '@material-ui/core';
 
-import "./Language.scss";
-import Occupations from "./Occupations";
+import Occupations from 'routes/Language/Occupations';
+
+import 'routes/Language/Language.scss';
 
 const Language = () => {
   const [gameMode, setGameMode] = useState(null);
 
   switch (gameMode) {
-    case "OCCUPATIONS":
+    case 'OCCUPATIONS':
       return <Occupations handleBackToMenu={() => setGameMode(null)} />;
     default:
       return (
@@ -32,7 +33,7 @@ const Language = () => {
                 color="default"
                 size="large"
                 fullWidth
-                onClick={() => setGameMode("OCCUPATIONS")}
+                onClick={() => setGameMode('OCCUPATIONS')}
               >
                 Occupations
               </Button>
