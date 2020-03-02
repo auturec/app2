@@ -6,20 +6,20 @@ const useStyles = makeStyles(() => ({
   characterSlide: {
     height: '300px',
     margin: '0 auto',
-    marginTop: '30px',
+    marginTop: '30px'
   },
   header: {
     color: 'teal',
     fontSize: '30px',
     marginLeft: '10px',
     marginTop: '30px',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   subheader: {
     fontSize: '20px',
     marginLeft: '10px',
     marginTop: '10px',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   }
 }));
 
@@ -38,7 +38,7 @@ const Slide = ({ img, header, subheader }) => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
 export default Slide;

@@ -18,22 +18,22 @@ const Copyright = () => {
       {'.'}
     </Typography>
   );
-}
+};
 
 const useStyles = makeStyles(theme => ({
   paper: {
     marginTop: theme.spacing(10),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   fullLogo: {
     margin: '0px auto',
-    width: '100px',
+    width: '100px'
   },
   forgotPasswordInstructions: {
     paddingTop: '30px',
-    color: 'teal',
+    color: 'teal'
   }
 }));
 
@@ -44,11 +44,15 @@ const ForgotPassword = () => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <img src={FullLogo} alt="" className={classes.fullLogo}/>
+        <img src={FullLogo} alt="" className={classes.fullLogo} />
         <Typography component="h1" variant="h5">
           Forgot Password
         </Typography>
-        <Typography component="p" variant="p" className={classes.forgotPasswordInstructions}>
+        <Typography
+          component="p"
+          variant="p"
+          className={classes.forgotPasswordInstructions}
+        >
           Please contact the administration to reset the password.
         </Typography>
       </div>
@@ -57,6 +61,6 @@ const ForgotPassword = () => {
       </Box>
     </Container>
   );
-}
+};
 
 export default ForgotPassword;

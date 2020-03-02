@@ -66,3 +66,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Attributes
+
+### Images for Associate Games
+
+Icons made by [pongsakornRed](https://www.flaticon.com/authors/pongsakornred), [mynamepong](https://www.flaticon.com/authors/mynamepong) from [flaticon](https://www.flaticon.com/)
+
+### Images for Language Games
+
+Icons made by [monkik](https://www.flaticon.com/authors/monkik) from [flaticon](https://www.flaticon.com/)

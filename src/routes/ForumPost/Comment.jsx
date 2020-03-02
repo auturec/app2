@@ -11,7 +11,7 @@ const useStyles = makeStyles(() => ({
     textTransform: 'none',
     width: '100%',
     padding: '20px',
-    marginLeft: '40px',
+    marginLeft: '40px'
   },
   comment: {
     color: 'teal',
@@ -22,25 +22,21 @@ const useStyles = makeStyles(() => ({
   date: {
     paddingTop: '10px',
     fontSize: '14px',
-    paddingBottom: '20px',
+    paddingBottom: '20px'
   }
 }));
 
-const Post = ({ id, question, date }) => {
-  const classes = useStyles()
+const Comment = ({ id, question, date }) => {
+  const classes = useStyles();
   return (
-    <div className={classes.commentContainer}>
+    <div className={classes.commentContainer} id={id}>
       <div className={classes.comment}>
-        <Typography>
-          {question}
-        </Typography>
-        <Typography className={classes.date}>
-          {date}
-        </Typography>
-        <Divider/>
+        <Typography>{question}</Typography>
+        <Typography className={classes.date}>{date}</Typography>
+        <Divider />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Post;
+export default Comment;
