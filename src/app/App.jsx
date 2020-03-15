@@ -16,6 +16,7 @@ import ForgotPassword from 'routes/ForgotPassword';
 
 // Games Components
 import Associate from 'routes/Cognitive/Associate';
+import Tiles from 'routes/Cognitive/Tiles';
 
 import {
   SIGNIN,
@@ -28,7 +29,8 @@ import {
   ONBOARDING,
   ACCOUNT,
   FORGOT_PASSWORD,
-  ASSOCIATE
+  ASSOCIATE,
+  TILES
 } from 'constants/routes';
 
 const App = () => {
@@ -47,6 +49,7 @@ const App = () => {
         <Route exact path={ACCOUNT} component={Account} />
         <Route exact path={FORGOT_PASSWORD} component={ForgotPassword} />
         <Route exact path={ASSOCIATE} component={Associate} />
+        <Route exact path={TILES} component={Tiles} />
       </Switch>
     </Router>
   );
