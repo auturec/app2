@@ -6,7 +6,7 @@ import { TilesGame } from './TilesGame';
 export const Tiles = () => {
   return (
     <div>
-      <ToastProvider>
+      <ToastProvider placement="bottom-right">
         <TilesGame />
       </ToastProvider>
     </div>

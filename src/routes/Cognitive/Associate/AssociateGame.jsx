@@ -3,44 +3,15 @@ import CssBaseLine from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import { useToasts } from 'react-toast-notifications';
 
+import {
+  getFourList,
+  getRandomFromArray,
+  getRandomPairFromArray
+} from 'routes/Cognitive/utils';
 import { ImageMap, ImageKeyList } from './GameImages';
 import MainImage from './MainImage';
 import MultipleOptions from './MultipleOptions';
 
-/**
- * Randomize array element order in-place.
- * Using Durstenfeld shuffle algorithm.
- * referencing https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
- * from https://stackoverflow.com/users/310500/laurens-holst
- */
-const shuffleArray = original => {
-  const array = original.slice();
-  for (let i = array.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-};
-
-const getRandomFromArray = array => {
-  const ranId = Math.floor(array.length * Math.random());
-  return array[ranId];
-};
-
-const getFourList = array => {
-  const copy = array.slice();
-  const shuffled = shuffleArray(copy);
-  return shuffled.slice(0, 4);
-};
-
-const getRandomPairFromArray = array => {
-  const randomArray = shuffleArray(array);
-  const firstTwo = randomArray.slice(0, 2);
-  return {
-    first: firstTwo[0],
-    second: firstTwo[firstTwo.length - 1]
-  };
-};
 
 /*  
   Game logic works by first selecting 4 random themes.
@@ -65,9 +36,8 @@ const AssociateGame = () => {
     return usedTheme.map(val => {
       if (val === answerTheme) {
         return { image: answerPair.pair.second, theme: answerTheme };
-      } 
-        return { image: getRandomFromArray(ImageMap[val]), theme: val };
-      
+      }
+      return { image: getRandomFromArray(ImageMap[val]), theme: val };
     });
   };
 
