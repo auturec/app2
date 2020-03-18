@@ -6,10 +6,13 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(() => ({
   root: {
-    border: '0px'
+    border: '0px',
+    textAlign: 'center'
   },
   media: {
-    display: 'flex'
+    display: 'flex',
+    maxHeight: 600,
+    maxWidth: 600
   }
 }));
 

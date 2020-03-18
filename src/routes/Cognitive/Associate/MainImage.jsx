@@ -25,8 +25,8 @@ const MainImage = ({ image, choosenTheme }) => {
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <Typography variant="subtitle1" align="center" gutterBottom>
-              Click on the image which best matches the following category:{' '}
-              {choosenTheme}
+              Click on the following image which best matches the following
+              category: {choosenTheme}
             </Typography>
             <DisplayImage image={image} />
           </Paper>
