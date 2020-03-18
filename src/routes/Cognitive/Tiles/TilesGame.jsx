@@ -7,21 +7,18 @@ import GridListTile from '@material-ui/core/GridListTile';
 
 import TilesImage from './TilesImageList';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   root: {
     marginTop: '100px',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper
+    textAlign: 'center'
   },
   gridList: {
-    width: 500,
+    width: 450,
     height: 450
-  },
-  containerBox: {
-    backgroundColor: theme.palette.background.default
   }
 }));
 
@@ -31,12 +28,8 @@ export const TilesGame = () => {
   return (
     <div className={classes.root}>
       <CssBaseLine />
-      <Container
-        className={classes.containerBox}
-        component="main"
-        maxWidth="sm"
-      >
-        <GridList cellHeight={160} className={classes.gridList} cols={3}>
+      <Container component="main" maxWidth="sm">
+        <GridList className={classes.gridList} cellHeight={100} cols={4}>
           {TilesImage.TilesImageList.map(img => (
             <GridListTile key={img} cols={1}>
               <img src={img} alt={img} />
