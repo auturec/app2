@@ -1,41 +1,79 @@
-import React from 'react';
-import CssBaseLine from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-    marginTop: '100px',
-    background: '#007700'
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.grey
-  }
-}));
+import React, { useState } from 'react';
+import { ToastProvider } from 'react-toast-notifications';
+import DisplayRandom from './components/DisplayRandom';
+import GameButtons from './components/GameButtons';
+import HeaderTitle from './components/HeaderTitle';
+import ImHeader from './components/ImHeader';
+import PlayArea from './components/PlayArea';
+import { TilesImageMap } from './TilesImageMap';
 
 export const TilesGame = () => {
-  const classes = useStyles();
+  const shuffleArray = original => {
+    const copy = original.slice();
+    for (let i = copy.length - 1; i > 1; i = -1) {
+      const j = Math.floor(Math.random() * i);
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  };
+
+  const getFourRandomFromArray = array => {
+    const indexList = array.map((val, index) => index);
+    const randomArray = shuffleArray(indexList);
+    return randomArray.slice(0, 4);
+  };
+
+  const [gameState, setGameState] = useState({
+    list: TilesImageMap(),
+    ans: getFourRandomFromArray(TilesImageMap())
+  });
+
+  const [randomList, setDisplay] = useState({
+    display: shuffleArray(gameState.ans)
+  });
+
+  const [ansState, setAnswer] = useState({
+    list: [-1, -1, -1, -1],
+    pos: 0
+  });
+
+  const handleImageClick = (e, data) => {
+    e.preventDefault();
+    if (ansState.pos < ansState.list.length) {
+      let curr = ansState.pos;
+      const currList = ansState.list.slice();
+      currList[curr] = data;
+      curr += 1;
+      setAnswer({
+        ...ansState,
+        list: currList,
+        pos: curr
+      });
+    }
+  };
+
   return (
-    <div className={classes.root}>
-      <CssBaseLine />
-      <Container component="main" maxWidth="sm">
-        <Grid container spacing={3}>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>Tiles</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>Start</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>Here</Paper>
-          </Grid>
-        </Grid>
-      </Container>
+    <div>
+      <ToastProvider>
+        <HeaderTitle />
+        <GameButtons
+          ansState={ansState}
+          setAnswer={setAnswer}
+          gameState={gameState}
+          setGameState={setGameState}
+          setDisplay={setDisplay}
+          randomList={randomList}
+          shuffleArray={shuffleArray}
+          getFourRandomFromArray={getFourRandomFromArray}
+        />
+        <ImHeader
+          handleImageClick={handleImageClick}
+          randomList={randomList}
+          gameState={gameState}
+        />
+        <DisplayRandom gameState={gameState} />
+        <PlayArea ansState={ansState} gameState={gameState} />
+      </ToastProvider>
     </div>
   );
 };
