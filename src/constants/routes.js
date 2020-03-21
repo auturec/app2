@@ -9,12 +9,6 @@ export const ACCOUNT = '/account';
 export const FORGOT_PASSWORD = '/forgot-password';
 export const ONBOARDING = '/';
 
-// Game Routes
-
-// Cognitive Games
-export const ASSOCIATE = '/cognitive/associate';
-export const TILES = '/cognitive/tiles';
-
 export const publicRoutes = [
   {
     path: ONBOARDING,
@@ -31,14 +25,6 @@ export const publicRoutes = [
   {
     path: FAQ,
     name: 'FAQ'
-  },
-  {
-    path: ASSOCIATE,
-    name: 'Associate'
-  },
-  {
-    path: TILES,
-    name: 'Tiles'
   }
 ];
 
