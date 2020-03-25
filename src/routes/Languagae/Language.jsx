@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
 
-import Occupations from 'routes/Language/Occupations';
+import Occupations from 'routes/Languagae/Occupations';
 
-import 'routes/Language/Language.scss';
+import 'routes/Languagae/Language.scss';
 
 const Language = () => {
   const [gameMode, setGameMode] = useState(null);

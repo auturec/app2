@@ -14,6 +14,7 @@ export const ONBOARDING = '/';
 // Cognitive Games
 export const ASSOCIATE = '/cognitive/associate';
 export const TILES = '/cognitive/tiles';
+export const OCCUPATIONS = '/language/occupations';
 
 export const publicRoutes = [
   {
@@ -39,6 +40,10 @@ export const publicRoutes = [
   {
     path: TILES,
     name: 'Tiles'
+  },
+  {
+    path: OCCUPATIONS,
+    name: 'Occupations'
   }
 ];
 
