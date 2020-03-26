@@ -1,7 +1,7 @@
 import React from 'react';
 import { BeatLoader } from 'react-spinners';
 
-import 'components/dataLoader/DataLoader.scss';
+import 'components/DataLoader/DataLoader.scss';
 
 const DataLoader = () => {
   return (

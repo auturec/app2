@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from 'react';
 import { useToasts } from 'react-toast-notifications';
 import { Grid, Button } from '@material-ui/core';
 
-import DataLoader from 'components/dataLoader/DataLoader';
+import DataLoader from 'components/DataLoader/DataLoader';
 import { getRandomElement, getNRandomElements } from 'utils/randomUtils';
 import { occupationData } from 'routes/Languagae/Occupations/data';
 
