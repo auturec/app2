@@ -53,7 +53,7 @@ export const TilesGame = () => {
   };
 
   return (
-    <div>
+    <div className="container notification is-primary is-centered">
       <ToastProvider>
         <HeaderTitle />
         <GameButtons

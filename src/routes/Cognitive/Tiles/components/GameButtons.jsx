@@ -1,26 +1,7 @@
 import React from 'react';
-import CssBaseLine from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 import { useToasts } from 'react-toast-notifications';
 
 import { TilesImageMap } from '../TilesImageMap';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-    marginTop: '100px',
-    background: '#007700'
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.grey
-  }
-}));
 
 const Gamepapers = props => {
   const {
@@ -81,31 +62,29 @@ const Gamepapers = props => {
     });
   };
 
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <CssBaseLine />
-      <Container component="main" maxWidth="sm">
-        <Grid container spacing={3}>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <Button onClick={e => handleAnswer(e)}>Check Answer</Button>
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <Button onClick={e => handleReset(e)}>Reset Game</Button>
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <Button onClick={e => handleClearAll(e)}>
-                Clear All Selections
-              </Button>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Container>
+    <div className="buttons has-addons is-centered">
+      <button
+        className="button is-dark has-text-white"
+        onClick={e => handleAnswer(e)}
+        type="button"
+      >
+        Check Answer
+      </button>
+      <button
+        className="button is-info has-text-black"
+        onClick={e => handleReset(e)}
+        type="button"
+      >
+        Reset Game
+      </button>
+      <button
+        className="button is-warning has-text-black"
+        onClick={e => handleClearAll(e)}
+        type="button"
+      >
+        Clear All Selections
+      </button>
     </div>
   );
 };
