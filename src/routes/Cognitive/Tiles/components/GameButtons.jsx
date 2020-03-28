@@ -11,8 +11,8 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
-  },
-
+  }
+  /*
   redbutton: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     border: 0,
@@ -42,6 +42,7 @@ const useStyles = makeStyles({
     height: 48,
     padding: '0 30px'
   }
+*/
 });
 
 const Gamepapers = props => {
@@ -109,26 +110,14 @@ const Gamepapers = props => {
 
   return (
     <div className={classes.root}>
-      <ButtonGroup aria-label="outlined secondary button group">
-        <Button
-          className={classes.yellowbutton}
-          onClick={e => handleAnswer(e)}
-          type="button"
-        >
+      <ButtonGroup color="primary" aria-label="outlined secondary button group">
+        <Button onClick={e => handleAnswer(e)} type="button">
           Check Answer
         </Button>
-        <Button
-          className={classes.greenbutton}
-          onClick={e => handleReset(e)}
-          type="button"
-        >
+        <Button onClick={e => handleReset(e)} type="button">
           Reset Game
         </Button>
-        <Button
-          className={classes.redbutton}
-          onClick={e => handleClearAll(e)}
-          type="button"
-        >
+        <Button onClick={e => handleClearAll(e)} type="button">
           Clear Selections
         </Button>
       </ButtonGroup>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ToastProvider } from 'react-toast-notifications';
+import { Container } from '@material-ui/core';
 import DisplayRandom from './components/DisplayRandom';
 import GameButtons from './components/GameButtons';
 import HeaderTitle from './components/HeaderTitle';
@@ -53,9 +54,19 @@ export const TilesGame = () => {
   };
 
   return (
-    <div className="container notification is-primary is-centered">
+    <Container>
       <ToastProvider>
+        <br />
+        <br />
+        <br />
         <HeaderTitle />
+        <ImHeader
+          handleImageClick={handleImageClick}
+          randomList={randomList}
+          gameState={gameState}
+        />
+        <DisplayRandom gameState={gameState} />
+        <PlayArea ansState={ansState} gameState={gameState} />
         <GameButtons
           ansState={ansState}
           setAnswer={setAnswer}
@@ -66,15 +77,8 @@ export const TilesGame = () => {
           shuffleArray={shuffleArray}
           getFourRandomFromArray={getFourRandomFromArray}
         />
-        <ImHeader
-          handleImageClick={handleImageClick}
-          randomList={randomList}
-          gameState={gameState}
-        />
-        <DisplayRandom gameState={gameState} />
-        <PlayArea ansState={ansState} gameState={gameState} />
       </ToastProvider>
-    </div>
+    </Container>
   );
 };
 
