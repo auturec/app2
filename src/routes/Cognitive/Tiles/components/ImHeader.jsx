@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, makeStyles, Box, Button } from '@material-ui/core';
+import { Grid, makeStyles, Box, Button, CardMedia } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -12,6 +12,10 @@ const useStyles = makeStyles({
   button: {
     margin: 20,
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
+  },
+
+  cardmedia: {
+    display: 'flex'
   }
 });
 
@@ -30,7 +34,12 @@ const ImHeader = props => {
                 className={classes.button}
                 onClick={e => handleImageClick(e, val)}
               >
-                <img src={gameState.list[val]} alt={gameState.list[val]} />
+                <CardMedia
+                  className={classes.cardmedia}
+                  component="img"
+                  src={gameState.list[val]}
+                  image={gameState.list[val]}
+                />
               </Button>
             </Grid>
           );

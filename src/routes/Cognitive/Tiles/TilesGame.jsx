@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   paper: {
     marginTop: 100,
     marginBottom: 50,
-    background: 'linear-gradient(to right, #FAFFD1, #A1FFCE)'
+    background: 'linear-gradient(to right, #E2E2E2, #C9D6FF)'
   }
 });
 
@@ -66,7 +66,7 @@ export const TilesGame = () => {
   return (
     <Container>
       <Paper elevation={1} className={classes.paper}>
-        <ToastProvider autoDismiss>
+        <ToastProvider autoDismiss placement="bottom-right">
           <HeaderTitle />
           <GameButtons
             ansState={ansState}
