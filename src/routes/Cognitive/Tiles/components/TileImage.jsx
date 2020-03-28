@@ -1,9 +1,10 @@
 import React from 'react';
+import { CardMedia } from '@material-ui/core';
 
 const TileImage = ({ value }) => {
   return (
     <div>
-      <img src={value} alt="grey-tile" />
+      <CardMedia component="img" src={value} image={value} alt="grey-tile" />
     </div>
   );
 };

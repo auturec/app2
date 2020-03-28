@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, makeStyles, Box } from '@material-ui/core';
+import { Grid, makeStyles, Box, CardMedia } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -9,9 +9,8 @@ const useStyles = makeStyles({
     flexGrow: 1
   },
 
-  box: {
-    borderRadius: 16,
-    background: 'linear-gradient(to right, #0083B0, #00B4DB)'
+  cardmedia: {
+    display: 'flex'
   }
 });
 
@@ -25,8 +24,14 @@ const DisplayRandom = props => {
           const src = gameState.list[val];
           return (
             <Grid item key={val}>
-              <Box m="2rem" className={classes.box}>
-                <img src={src} alt={ind.toString()} />
+              <Box m="2rem">
+                <CardMedia
+                  className={classes.cardmedia}
+                  component="img"
+                  src={src}
+                  image={src}
+                  alt={ind.toString()}
+                />
               </Box>
             </Grid>
           );
