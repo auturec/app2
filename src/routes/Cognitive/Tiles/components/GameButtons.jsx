@@ -30,6 +30,19 @@ const Gamepapers = props => {
     }
   };
 
+  const handleClearAll = e => {
+    e.preventDefault();
+    setAnswer({
+      ...ansState,
+      list: [-1, -1, -1, -1],
+      pos: 0
+    });
+    addToast(`Selections has been cleared`, {
+      appearance: 'warning',
+      autoDismiss: true
+    });
+  };
+
   const handleReset = e => {
     e.preventDefault();
     addToast(`Game has been reset!`, {
@@ -47,19 +60,8 @@ const Gamepapers = props => {
       ...randomList,
       display: shuffleArray(gameState.ans)
     });
-  };
 
-  const handleClearAll = e => {
-    e.preventDefault();
-    setAnswer({
-      ...ansState,
-      list: [-1, -1, -1, -1],
-      pos: 0
-    });
-    addToast(`Selections has been cleared`, {
-      appearance: 'warning',
-      autoDismiss: true
-    });
+    handleClearAll(e);
   };
 
   return (
