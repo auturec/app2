@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ToastProvider } from 'react-toast-notifications';
-import { Container } from '@material-ui/core';
+import { Container, Paper, makeStyles } from '@material-ui/core';
 import DisplayRandom from './components/DisplayRandom';
 import GameButtons from './components/GameButtons';
 import HeaderTitle from './components/HeaderTitle';
@@ -8,7 +8,17 @@ import ImHeader from './components/ImHeader';
 import PlayArea from './components/PlayArea';
 import { TilesImageMap } from './TilesImageMap';
 
+const useStyles = makeStyles({
+  paper: {
+    marginTop: 100,
+    marginBottom: 50,
+    background: 'linear-gradient(to right, #FAFFD1, #A1FFCE)'
+  }
+});
+
 export const TilesGame = () => {
+  const classes = useStyles();
+
   const shuffleArray = original => {
     const copy = original.slice();
     for (let i = copy.length - 1; i > 1; i = -1) {
@@ -55,29 +65,28 @@ export const TilesGame = () => {
 
   return (
     <Container>
-      <ToastProvider>
-        <br />
-        <br />
-        <br />
-        <HeaderTitle />
-        <ImHeader
-          handleImageClick={handleImageClick}
-          randomList={randomList}
-          gameState={gameState}
-        />
-        <DisplayRandom gameState={gameState} />
-        <PlayArea ansState={ansState} gameState={gameState} />
-        <GameButtons
-          ansState={ansState}
-          setAnswer={setAnswer}
-          gameState={gameState}
-          setGameState={setGameState}
-          setDisplay={setDisplay}
-          randomList={randomList}
-          shuffleArray={shuffleArray}
-          getFourRandomFromArray={getFourRandomFromArray}
-        />
-      </ToastProvider>
+      <Paper elevation={1} className={classes.paper}>
+        <ToastProvider autoDismiss>
+          <HeaderTitle />
+          <GameButtons
+            ansState={ansState}
+            setAnswer={setAnswer}
+            gameState={gameState}
+            setGameState={setGameState}
+            setDisplay={setDisplay}
+            randomList={randomList}
+            shuffleArray={shuffleArray}
+            getFourRandomFromArray={getFourRandomFromArray}
+          />
+          <ImHeader
+            handleImageClick={handleImageClick}
+            randomList={randomList}
+            gameState={gameState}
+          />
+          <DisplayRandom gameState={gameState} />
+          <PlayArea ansState={ansState} gameState={gameState} />
+        </ToastProvider>
+      </Paper>
     </Container>
   );
 };

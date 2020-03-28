@@ -1,20 +1,42 @@
 import React from 'react';
+import { Grid, makeStyles, Box } from '@material-ui/core';
+
+const useStyles = makeStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    flexGrow: 1
+  },
+
+  box: {
+    borderRadius: 16,
+    background: 'linear-gradient(to right, #0083B0, #00B4DB)'
+  }
+});
 
 const DisplayRandom = props => {
   const { gameState } = props;
+  const classes = useStyles();
   return (
-    <div className="columns is-centered is-mobile">
-      {gameState.ans.map((val, ind) => {
-        const src = gameState.list[val];
-        return (
-          <div className="column" key={val}>
-            <button className="has-background-danger" disabled type="button">
-              <img src={src} alt={ind.toString()} />
-            </button>
-          </div>
-        );
-      })}
-    </div>
+    <Grid container className={classes.root} spacing={2}>
+      <Grid container justify="center" spacing={24}>
+        {gameState.ans.map((val, ind) => {
+          const src = gameState.list[val];
+          return (
+            <Grid item key={val}>
+              <Box m="2rem" className={classes.box}>
+                <img src={src} alt={ind.toString()} />
+              </Box>
+            </Grid>
+          );
+        })}
+      </Grid>
+      <Box fontWeight="fontWeightBold" fontFamily="NewRoman">
+        --Choose tiles in the first line that match the tiles in the second
+        line--
+      </Box>
+    </Grid>
   );
 };
 

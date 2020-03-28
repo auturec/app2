@@ -61,13 +61,11 @@ const Gamepapers = props => {
     e.preventDefault();
     if (ansState.list.every(val => gameState.ans.includes(val))) {
       addToast(`Nice work matching the patterns!`, {
-        appearance: 'success',
-        autoDismiss: true
+        appearance: 'success'
       });
     } else {
       addToast(`Please check your answer and try again!`, {
-        appearance: 'error',
-        autoDismiss: true
+        appearance: 'error'
       });
     }
   };
@@ -80,16 +78,14 @@ const Gamepapers = props => {
       pos: 0
     });
     addToast(`Selections has been cleared`, {
-      appearance: 'warning',
-      autoDismiss: true
+      appearance: 'warning'
     });
   };
 
   const handleReset = e => {
     e.preventDefault();
     addToast(`Game has been reset!`, {
-      appearance: 'warning',
-      autoDismiss: true
+      appearance: 'warning'
     });
     // Reset game
     setGameState({
