@@ -18,6 +18,7 @@ import ForgotPassword from 'routes/ForgotPassword';
 import Associate from 'routes/Cognitive/Associate';
 import Tiles from 'routes/Cognitive/Tiles';
 import Occupations from 'routes/Languagae/Occupations';
+import Emotions from 'routes/Person/Emotions';
 
 import {
   SIGNIN,
@@ -32,7 +33,8 @@ import {
   FORGOT_PASSWORD,
   ASSOCIATE,
   TILES,
-  OCCUPATIONS
+  OCCUPATIONS,
+  EMOTIONS
 } from 'constants/routes';
 
 const App = () => {
@@ -53,6 +55,7 @@ const App = () => {
         <Route exact path={ASSOCIATE} component={Associate} />
         <Route exact path={TILES} component={Tiles} />
         <Route exact path={OCCUPATIONS} component={Occupations} />
+        <Route exact path={EMOTIONS} component={Emotions} />
       </Switch>
     </Router>
   );

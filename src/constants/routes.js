@@ -15,6 +15,7 @@ export const ONBOARDING = '/';
 export const ASSOCIATE = '/cognitive/associate';
 export const TILES = '/cognitive/tiles';
 export const OCCUPATIONS = '/language/occupations';
+export const EMOTIONS = '/person/emotions';
 
 export const publicRoutes = [
   {
@@ -44,6 +45,10 @@ export const publicRoutes = [
   {
     path: OCCUPATIONS,
     name: 'Occupations'
+  },
+  {
+    path: EMOTIONS,
+    name: 'Emotions'
   }
 ];
 
