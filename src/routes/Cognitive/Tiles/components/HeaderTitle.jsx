@@ -16,8 +16,7 @@ const HeaderTitle = () => {
     <div className={classes.root}>
       <Box component="span" m={3}>
         <Typography variant="h5" gutterBottom>
-          Welcome to the tiles game, click on the right tiles matching the red
-          pattern shown!
+          Tiles Game!
         </Typography>
       </Box>
     </div>

@@ -22,12 +22,14 @@ const PlayArea = props => {
   const { ansState, gameState } = props;
   const classes = useStyles();
   return (
-    <Grid container className={classes.root} spacing={2}>
-      <Grid container justify="center" spacing={24}>
+    <Grid container className={classes.root} spacing={0}>
+      <Grid container justify="center" spacing={0}>
         {ansState.list.map((val, index) => {
           return (
             <Grid
               item
+              xs={6}
+              sm={3}
               key={
                 val === -1
                   ? `grey${index}`
@@ -45,8 +47,8 @@ const PlayArea = props => {
           );
         })}
       </Grid>
-      <Box fontWeight="fontWeightBold" fontFamily="NewRoman">
-        --The tiles you chose will be shown here--
+      <Box fontWeight="fontWeightBold" fontFamily="Roboto">
+        The tiles you chose will be shown here
       </Box>
     </Grid>
   );

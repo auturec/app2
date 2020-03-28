@@ -23,11 +23,11 @@ const ImHeader = props => {
   const { handleImageClick, randomList, gameState } = props;
   const classes = useStyles();
   return (
-    <Grid container className={classes.root} spacing={2}>
-      <Grid container justify="center" spacing={24}>
+    <Grid container className={classes.root} spacing={0}>
+      <Grid container justify="center" spacing={0}>
         {randomList.display.map(val => {
           return (
-            <Grid key={val} item>
+            <Grid key={val} item xs={6} sm={3}>
               <Button
                 size="medium"
                 variant="outlined"
@@ -45,8 +45,8 @@ const ImHeader = props => {
           );
         })}
       </Grid>
-      <Box fontWeight="fontWeightBold" fontFamily="NewRoman">
-        --Choose your tiles above by clicking on it--
+      <Box fontWeight="fontWeightBold" fontFamily="Roboto">
+        Choose your tiles above by clicking on it
       </Box>
     </Grid>
   );
