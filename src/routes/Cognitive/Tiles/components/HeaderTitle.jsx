@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -15,8 +15,10 @@ const HeaderTitle = () => {
   return (
     <div className={classes.root}>
       <Box component="span" m={3}>
-        Welcome to the tiles game, click on the right tiles matching the red
-        pattern shown!
+        <Typography variant="h5" gutterBottom>
+          Welcome to the tiles game, click on the right tiles matching the red
+          pattern shown!
+        </Typography>
       </Box>
     </div>
   );
