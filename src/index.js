@@ -5,7 +5,6 @@ import 'antd/dist/antd.css';
 import App from 'app';
 import AppProviders from './contexts';
 import * as serviceWorker from './serviceWorker';
-
 import './index.scss';
 
 const AppRender = () => {

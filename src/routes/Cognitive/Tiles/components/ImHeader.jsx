@@ -1,0 +1,55 @@
+import React from 'react';
+import { Grid, makeStyles, Box, Button, CardMedia } from '@material-ui/core';
+
+const useStyles = makeStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    flexGrow: 1
+  },
+
+  button: {
+    margin: 20,
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
+  },
+
+  cardmedia: {
+    display: 'flex'
+  }
+});
+
+const ImHeader = props => {
+  const { handleImageClick, randomList, gameState } = props;
+  const classes = useStyles();
+  return (
+    <Grid container className={classes.root} spacing={0}>
+      <Grid container justify="center" spacing={0}>
+        {randomList.display.map(val => {
+          return (
+            <Grid key={val} item xs={6} sm={3}>
+              <Button
+                size="medium"
+                variant="outlined"
+                className={classes.button}
+                onClick={e => handleImageClick(e, val)}
+              >
+                <CardMedia
+                  className={classes.cardmedia}
+                  component="img"
+                  src={gameState.list[val]}
+                  image={gameState.list[val]}
+                />
+              </Button>
+            </Grid>
+          );
+        })}
+      </Grid>
+      <Box fontWeight="fontWeightBold" fontFamily="Roboto">
+        Choose your tiles above by clicking on it
+      </Box>
+    </Grid>
+  );
+};
+
+export default ImHeader;
