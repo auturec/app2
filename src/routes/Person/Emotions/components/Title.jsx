@@ -11,16 +11,20 @@ const useStyles = makeStyles({
 });
 
 const Title = props => {
-  const { stage } = props;
+  const { stage, setStage } = props;
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <Box component="span" m={3}>
         <Typography variant="h5" gutterBottom>
-          Emotions Game!
+          Emotions Game! <br /> You are at Stage {stage}
         </Typography>
-        <Button variant="outlined" color="primary" disabled>
-          You are at stage {stage}
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={() => setStage(stage === 3 ? 1 : stage + 1)}
+        >
+          {`Move to Stage ${stage === 3 ? 1 : stage + 1}`}
         </Button>
       </Box>
     </div>
