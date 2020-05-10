@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Teacher = ({ height = 512, width = 512, ...props }) => {
+const Teacher = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path
         d="M380.42 272.25L377.78 296 376 312H152l-1.78-16-2.64-23.75a123.092 123.092 0 019.2-62.07 123.208 123.208 0 009.8-54.63l-1.39-27.68a98.933 98.933 0 11197.62 0l-1.39 27.68a123.208 123.208 0 009.8 54.63 123.028 123.028 0 019.2 62.07z"
         fill="#8f4d2e"

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Barber = ({ height = 512, width = 512, ...props }) => {
+const Barber = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path
         d="M488 343.35V464a24 24 0 01-24 24H192a24 24 0 01-24-24V343.35a47.985 47.985 0 0138.58-47.06C241.66 289.27 288 280 288 280v-72h80v72l45.15 9.03 36.26 7.25A48 48 0 01488 343.35z"
         fill="#3d4d63"

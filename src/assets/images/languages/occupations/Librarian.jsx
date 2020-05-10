@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Librarian = ({ height = 512, width = 512, ...props }) => {
+const Librarian = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path d="M424 384h56v112h-56z" fill="#fec9a3" />
       <path d="M168 392H40l16-192h128z" fill="#7a432a" />
       <path d="M48.081 392H168l16-192h-9.399z" fill="#743b20" />

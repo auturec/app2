@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Doctor = ({ height = 512, width = 512, ...props }) => {
+const Doctor = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path
         d="M424 345.18V496H152V384l-64 72H48v-64l44.73-70.3a48.026 48.026 0 0131.91-21.45L192 288l64 176 64-176 63.3 9.74a47.992 47.992 0 0140.7 47.44z"
         fill="#e0e0de"

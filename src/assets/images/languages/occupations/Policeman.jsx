@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Policeman = ({ height = 512, width = 512, ...props }) => {
+const Policeman = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path
         d="M202.885 340.52L144 368l-58.885-27.48a96 96 0 01-55.009-95.685l6.655-73.205A125.77 125.77 0 0024 104l32-32a96.2 96.2 0 0085.223 1.319L144 72l2.777 1.319A96.2 96.2 0 00232 72l32 32a125.77 125.77 0 00-12.761 67.63l6.655 73.205a96 96 0 01-55.009 95.685z"
         fill="#49648e"

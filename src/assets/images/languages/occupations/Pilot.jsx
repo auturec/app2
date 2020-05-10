@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Pilot = ({ height = 512, width = 512, ...props }) => {
+const Pilot = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path d="M88 280h16v24H88zM336 280h16v24h-16z" fill="#d6d6d4" />
       <path
         d="M488 176v50.58a8 8 0 01-5.03 7.43L448 248l-80 32H54.76A30.758 30.758 0 0124 249.24c0-.41.01-.83.03-1.24a30.706 30.706 0 0116.98-26.28l17.36-8.68 14.28-14.06A80.027 80.027 0 01128.77 176z"

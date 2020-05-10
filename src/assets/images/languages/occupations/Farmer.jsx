@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Farmer = ({ height = 512, width = 512, ...props }) => {
+const Farmer = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path
         d="M136 208.33v79.3a48.014 48.014 0 01-20.1 39.06L80 352.33l-35.9-25.64A48.017 48.017 0 0124 287.63v-79.3a56.013 56.013 0 0186.09-47.24 56.576 56.576 0 019.51 7.64 55.862 55.862 0 0116.4 39.6z"
         fill="#7eb457"

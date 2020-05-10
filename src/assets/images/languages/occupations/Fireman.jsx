@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Fireman = ({ height = 512, width = 512, ...props }) => {
+const Fireman = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path
         d="M385.6 246.4C368.983 256.526 348.772 262 328 262h-32c-20.771 0-40.983-5.474-57.6-15.6-24.173-14.731-38.4-37.849-38.4-62.4v-40h224v40c0 24.551-14.227 47.669-38.4 62.4z"
         fill="#f98500"

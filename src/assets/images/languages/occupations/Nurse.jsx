@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Nurse = ({ height = 512, width = 512, ...props }) => {
+const Nurse = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path d="M408 160h16v16h-16zM264 160h16v16h-16z" fill="#feb784" />
       <rect fill="#348fd9" height={320} rx={24} width={240} x={24} y={176} />
       <path

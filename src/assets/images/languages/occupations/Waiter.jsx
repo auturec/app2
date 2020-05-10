@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Waiter = ({ height = 512, width = 512, ...props }) => {
+const Waiter = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path d="M144 264h16v64h-16z" fill="#e0e0de" />
       <path d="M144 264h16v16h-16z" fill="#d6d6d4" />
       <path

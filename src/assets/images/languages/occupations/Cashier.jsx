@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Cashier = ({ height = 512, width = 512, ...props }) => {
+const Cashier = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path
         d="M487.754 272a128.035 128.035 0 01-142.33 127.22c-44.78-4.87-83.14-33.55-101.69-73.05a125.2 125.2 0 01-10.74-36.22 127.809 127.809 0 017.36-63.98c11.12-28.62 15.4-59.45 15.4-90.16V128a104 104 0 01109.03-103.88c32.22 1.51 60.16 18.15 78.05 42.68a108.8 108.8 0 0120.92 64.14v7.68c0 29.87 4.71 59.7 15.48 87.56a126.922 126.922 0 018.52 45.82z"
         fill="#fae890"

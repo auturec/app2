@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Vet = ({ height = 512, width = 512, ...props }) => {
+const Vet = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path d="M440 112h16v16h-16z" fill="#743b20" />
       <path d="M144 344h32v144h-32z" fill="#f7a116" />
       <path

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Chef = ({ height = 512, width = 512, ...props }) => {
+const Chef = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path d="M360 322.29V360H248v-37.71l16-2.29v-64h80v64z" fill="#fec9a3" />
       <path
         d="M344 307.856V256h-80v51.856a71.963 71.963 0 0080 0z"

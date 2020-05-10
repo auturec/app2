@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Painter = ({ height = 512, width = 512, ...props }) => {
+const Painter = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path d="M432 160h16v16h-16z" fill="#feb784" />
       <path d="M168 288h32v72h-32z" fill="#82462a" />
       <path d="M88 328h192v32H88z" fill="#82462a" />

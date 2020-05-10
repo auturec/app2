@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Student = ({ height = 512, width = 512, ...props }) => {
+const Student = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path d="M200 248h96v96h-96zM24 248h96v96H24z" fill="#e0e0de" />
       <path
         d="M48 272h16v16H48zM80 272h16v16H80zM48 304h16v16H48zM80 304h16v16H80z"

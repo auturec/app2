@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Astronaut = ({ height = 512, width = 512, ...props }) => {
+const Astronaut = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path
         d="M488 120v224H168V120a48 48 0 0148-48h224a48 48 0 0148 48z"
         fill="#348fd9"

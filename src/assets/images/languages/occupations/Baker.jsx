@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Baker = ({ height = 512, width = 512, ...props }) => {
+const Baker = ({ height = 512, width = 512, style }) => {
   return (
-    <svg height={height} viewBox="0 0 512 512" width={width} {...props}>
+    <svg height={height} viewBox="0 0 512 512" width={width} style={style}>
       <path d="M456 128v184H248V128a104 104 0 11208 0z" fill="#f98500" />
       <path
         d="M456 128v184h-72V128a104.1 104.1 0 00-68-97.6A104.027 104.027 0 01456 128z"
