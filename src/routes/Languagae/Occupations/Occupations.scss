@@ -15,7 +15,7 @@
 
   &__expressive {
     &--title {
-      margin-top: 1rem;
+      font-weight: bold;
     }
 
     &--answers {
@@ -32,10 +32,8 @@
 
   &__receptive {
     &--title {
-      margin-top: 1rem;
-      .title:not(:last-child) {
-        margin-bottom: 0;
-      }
+      font-weight: bold;
+      margin-bottom: 0;
     }
 
     &--job-name {
