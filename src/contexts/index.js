@@ -2,7 +2,11 @@ import React from 'react';
 import { ToastProvider } from 'react-toast-notifications';
 
 const AppProviders = ({ children }) => {
-  return <ToastProvider>{children}</ToastProvider>;
+  return (
+    <ToastProvider autoDismiss placement="bottom-right">
+      {children}
+    </ToastProvider>
+  );
 };
 
 export default AppProviders;
