@@ -1,5 +1,4 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -20,21 +19,21 @@ const Copyright = () => {
   );
 };
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(10),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   fullLogo: {
     margin: '0px auto',
-    width: '100px'
+    width: '100px',
   },
   forgotPasswordInstructions: {
     paddingTop: '30px',
-    color: 'teal'
-  }
+    color: 'teal',
+  },
 }));
 
 const ForgotPassword = () => {
@@ -42,7 +41,6 @@ const ForgotPassword = () => {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
       <div className={classes.paper}>
         <img src={FullLogo} alt="" className={classes.fullLogo} />
         <Typography component="h1" variant="h5">

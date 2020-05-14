@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -25,24 +24,24 @@ const Copyright = () => {
   );
 };
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(10),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   fullLogo: {
     margin: '0px auto',
-    width: '100px'
+    width: '100px',
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3)
+    marginTop: theme.spacing(3),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
-  }
+    margin: theme.spacing(3, 0, 2),
+  },
 }));
 
 const SignUp = () => {
@@ -50,7 +49,6 @@ const SignUp = () => {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
       <div className={classes.paper}>
         <img src={FullLogo} alt="" className={classes.fullLogo} />
         <Typography component="h1" variant="h5">

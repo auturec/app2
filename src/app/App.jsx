@@ -17,7 +17,7 @@ import ForgotPassword from 'routes/ForgotPassword';
 // Games Components
 import Associate from 'routes/Cognitive/Associate';
 import Tiles from 'routes/Cognitive/Tiles';
-import Occupations from 'routes/Languagae/Occupations';
+import Occupations from 'routes/Languages/Occupations';
 
 import {
   SIGNIN,
@@ -32,7 +32,7 @@ import {
   FORGOT_PASSWORD,
   ASSOCIATE,
   TILES,
-  OCCUPATIONS
+  OCCUPATIONS,
 } from 'constants/routes';
 
 const App = () => {

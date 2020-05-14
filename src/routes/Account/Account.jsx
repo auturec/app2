@@ -1,35 +1,34 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10)
+    marginTop: theme.spacing(10),
   },
   changePassword: {
     color: 'teal',
     fontWeight: 'bold',
     fontSize: '16px',
-    marginTop: theme.spacing(4)
+    marginTop: theme.spacing(4),
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(1),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
-  }
+    margin: theme.spacing(3, 0, 2),
+  },
 }));
 
 const Account = () => {
   const classes = useStyles();
   return (
     <Container component="main" maxWidth="sm">
-      <CssBaseline />
       <div className={classes.paper}>
         <Grid container>
           <Grid item xs={12} sm={4}>
