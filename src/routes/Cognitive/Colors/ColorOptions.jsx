@@ -22,7 +22,7 @@ const TapColors = () => {
         <Grid item xs={6}>
           <ColorBox />
         </Grid>
-      </Grid>{' '}
+      </Grid>
     </div>
   );
 };

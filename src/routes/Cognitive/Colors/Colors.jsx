@@ -6,7 +6,6 @@ import {
   getRandomElement,
 } from 'utils/randomUtils';
 
-import ColorBox from './ColorBox';
 import ColorOptions from './ColorOptions';
 import './Colors.scss';
 
@@ -20,28 +19,6 @@ const useStyles = makeStyles((theme) => ({
     height: '100px',
   },
 }));
-
-class ClickMe extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { fade: false };
-  }
-
-  render() {
-    const { fade } = this.state;
-
-    return (
-      <button
-        type="button"
-        onClick={() => this.setState({ fade: true })}
-        onAnimationEnd={() => this.setState({ fade: false })}
-        className={fade ? 'fade' : ''}
-      >
-        Click me!
-      </button>
-    );
-  }
-}
 
 const TapColors = () => {
   const classes = useStyles();
@@ -61,9 +38,7 @@ const TapColors = () => {
   const getRandomTwoColors = () => {
     handleColors(shuffleArray(colors));
     const c = getNRandomElements(colors, 2);
-    const a = getRandomElement(c);
-    console.log(c);
-    console.log(a);
+    getRandomElement(c);
   };
 
   return (
@@ -74,9 +49,6 @@ const TapColors = () => {
           Click me
         </button>
         <ColorOptions />
-        <ColorBox />
-        <div className={classes.box}>This is the colors page</div>
-        <ClickMe />
       </div>
     </Container>
   );
