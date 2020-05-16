@@ -5,6 +5,9 @@ import {
   getNRandomElements,
   getRandomElement,
 } from 'utils/randomUtils';
+
+import ColorBox from './ColorBox';
+import ColorOptions from './ColorOptions';
 import './Colors.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -70,6 +73,8 @@ const TapColors = () => {
         <button type="button" onClick={getRandomTwoColors}>
           Click me
         </button>
+        <ColorOptions />
+        <ColorBox />
         <div className={classes.box}>This is the colors page</div>
         <ClickMe />
       </div>
