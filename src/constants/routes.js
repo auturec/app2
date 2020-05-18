@@ -15,49 +15,54 @@ export const ONBOARDING = '/';
 export const ASSOCIATE = '/cognitive/associate';
 export const TILES = '/cognitive/tiles';
 export const OCCUPATIONS = '/language/occupations';
+export const NUMBERS = '/numbers';
 
 export const publicRoutes = [
   {
     path: ONBOARDING,
-    name: 'Home'
+    name: 'Home',
   },
   {
     path: TESTIMONIAL,
-    name: 'Testimonial'
+    name: 'Testimonial',
   },
   {
     path: FORUM,
-    name: 'Forum'
+    name: 'Forum',
   },
   {
     path: FAQ,
-    name: 'FAQ'
+    name: 'FAQ',
   },
   {
     path: ASSOCIATE,
-    name: 'Associate'
+    name: 'Associate',
   },
   {
     path: TILES,
-    name: 'Tiles'
+    name: 'Tiles',
   },
   {
     path: OCCUPATIONS,
-    name: 'Occupations'
-  }
+    name: 'Occupations',
+  },
+  {
+    path: NUMBERS,
+    name: 'Numbers',
+  },
 ];
 
 export const privateRoutes = [
   {
     path: PROFILE,
-    name: 'Profile'
+    name: 'Profile',
   },
   {
     path: ACCOUNT,
-    name: 'Account'
+    name: 'Account',
   },
   {
     path: SIGNIN,
-    name: 'SignIn'
-  }
+    name: 'SignIn',
+  },
 ];

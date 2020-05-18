@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -9,30 +8,30 @@ import FaqLogo from 'assets/Faq/FaqLogo.svg';
 import FaqPanels from './FaqPanels';
 import { FaqData } from './FaqData';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10)
+    marginTop: theme.spacing(10),
   },
   header: {
     fontWeight: 'bold',
     fontSize: '30px',
     color: 'teal',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   tabsPanel: {
-    marginTop: '30px'
+    marginTop: '30px',
   },
   faqPanels: {
-    marginTop: '20px'
+    marginTop: '20px',
   },
   tab: {
-    color: 'teal'
+    color: 'teal',
   },
   faqLogo: {
     display: 'block',
     margin: '0px auto',
-    width: '100px'
-  }
+    width: '100px',
+  },
 }));
 
 export default function Forum() {
@@ -46,7 +45,6 @@ export default function Forum() {
 
   return (
     <Container component="main" maxWidth="sm">
-      <CssBaseline />
       <div className={classes.paper}>
         <div className={classes.header}>How can we help you?</div>
         <img src={FaqLogo} alt="" className={classes.faqLogo} />
@@ -58,7 +56,7 @@ export default function Forum() {
             variant="fullWidth"
             aria-label="full width tabs example"
           >
-            {topics.map(label => (
+            {topics.map((label) => (
               <Tab label={label} key={label} className={classes.tab} />
             ))}
           </Tabs>
