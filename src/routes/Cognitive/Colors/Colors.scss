@@ -2,7 +2,6 @@
   &__square {
     position: relative;
     width: 100%;
-    border: grey 1px solid;
 
     &--red {
       background-color: red;
@@ -38,6 +37,7 @@
 
     &--white {
       background-color: white;
+      border: grey 1px solid;
     }
   }
 
