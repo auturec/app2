@@ -18,7 +18,7 @@ import ForgotPassword from 'routes/ForgotPassword';
 import Associate from 'routes/Cognitive/Associate';
 import Tiles from 'routes/Cognitive/Tiles';
 import Occupations from 'routes/Languages/Occupations';
-import Words from 'routes/Words';
+import Words from 'routes/Languages/Words';
 
 import {
   SIGNIN,
