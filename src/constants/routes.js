@@ -16,6 +16,7 @@ export const ASSOCIATE = '/cognitive/associate';
 export const TILES = '/cognitive/tiles';
 export const COLORS = '/cognitive/colors';
 export const OCCUPATIONS = '/language/occupations';
+export const WORDS = '/language/words';
 
 export const publicRoutes = [
   {
@@ -49,6 +50,10 @@ export const publicRoutes = [
   {
     path: OCCUPATIONS,
     name: 'Occupations',
+  },
+  {
+    path: WORDS,
+    name: 'Words',
   },
 ];
 

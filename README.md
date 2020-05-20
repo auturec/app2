@@ -75,4 +75,4 @@ Icons made by [pongsakornRed](https://www.flaticon.com/authors/pongsakornred), [
 
 ### Images for Language Games
 
-Icons made by [monkik](https://www.flaticon.com/authors/monkik) from [flaticon](https://www.flaticon.com/)
+Icons made by [monkik](https://www.flaticon.com/authors/monkik), [Smashicons](https://www.flaticon.com/authors/smashicons) from [flaticon](https://www.flaticon.com/)
