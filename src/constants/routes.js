@@ -15,7 +15,7 @@ export const ONBOARDING = '/';
 export const ASSOCIATE = '/cognitive/associate';
 export const TILES = '/cognitive/tiles';
 export const OCCUPATIONS = '/language/occupations';
-export const WORDS = '/words';
+export const WORDS = '/language/words';
 
 export const publicRoutes = [
   {
