@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Carousel } from 'antd';
 import NameLogo from 'assets/Logo/Name.svg';
-import CharacterSlide1 from 'assets/Onboarding/CharacterSlide1.svg';
 import CharacterSlide2 from 'assets/Onboarding/CharacterSlide2.svg';
+import CharacterSlide1 from 'assets/Onboarding/CharacterSlide1.svg';
 import CharacterSlide3 from 'assets/Onboarding/CharacterSlide3.svg';
 import Slide from './Slide';
 
@@ -27,18 +27,18 @@ function Onboarding() {
         <Carousel autoplay>
           <Slide
             img={CharacterSlide1}
-            header="Child Profiling"
-            subheader="Track Your Child's Progess"
+            header="Games and activities"
+            subheader="Expert certified activities created specially for your special child"
           />
           <Slide
             img={CharacterSlide2}
-            header="Games and Activities"
-            subheader="Expert Certified Activities created specially for your Special Child"
+            header="Child profiling (comming soon)"
+            subheader="Track your child's progress"
           />
           <Slide
             img={CharacterSlide3}
-            header="Forum and Community"
-            subheader="Made Just for You"
+            header="Forum and community (coming soon)"
+            subheader="Made just for you"
           />
         </Carousel>
       </div>

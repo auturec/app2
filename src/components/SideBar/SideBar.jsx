@@ -9,27 +9,27 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import { publicRoutes, privateRoutes } from 'constants/routes';
+import { publicRoutes } from 'constants/routes';
 
 const useStyles = makeStyles({
   list: {
-    width: 250
+    width: 250,
   },
   listItem: {
-    color: 'teal'
+    color: 'teal',
   },
   fullList: {
-    width: 'auto'
-  }
+    width: 'auto',
+  },
 });
 
 const SideBar = () => {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    left: false
+    left: false,
   });
 
-  const toggleDrawer = (side, open) => event => {
+  const toggleDrawer = (side, open) => (event) => {
     if (
       event &&
       event.type === 'keydown' &&
@@ -41,7 +41,7 @@ const SideBar = () => {
     setState({ ...state, [side]: open });
   };
 
-  const sideList = side => (
+  const sideList = (side) => (
     <div
       className={classes.list}
       role="presentation"
@@ -49,7 +49,7 @@ const SideBar = () => {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {publicRoutes.map(route => (
+        {publicRoutes.map((route) => (
           <Link to={route.path} key={`public-link-${route.name}`}>
             <ListItem button>
               <ListItemText primary={route.name} className={classes.listItem} />
@@ -58,15 +58,6 @@ const SideBar = () => {
         ))}
       </List>
       <Divider />
-      <List>
-        {privateRoutes.map(route => (
-          <Link to={route.path} key={`private-link-${route.name}`}>
-            <ListItem button>
-              <ListItemText primary={route.name} className={classes.listItem} />
-            </ListItem>
-          </Link>
-        ))}
-      </List>
     </div>
   );
 
