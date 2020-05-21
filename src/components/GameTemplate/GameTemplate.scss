@@ -66,6 +66,10 @@
 
       &.is-faded {
         opacity: 0.5;
+
+        &:hover {
+          background-color: white !important;
+        }
       }
 
       &.is-hinted {
