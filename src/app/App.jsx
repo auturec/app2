@@ -19,6 +19,8 @@ import Associate from 'routes/Cognitive/Associate';
 import Tiles from 'routes/Cognitive/Tiles';
 import Occupations from 'routes/Languages/Occupations';
 import Numbers from 'routes/Numbers';
+import Words from 'routes/Languages/Words';
+import Colors from 'routes/Cognitive/Colors';
 
 import {
   SIGNIN,
@@ -35,6 +37,8 @@ import {
   TILES,
   OCCUPATIONS,
   NUMBERS,
+  COLORS,
+  WORDS,
 } from 'constants/routes';
 
 const App = () => {
@@ -56,6 +60,8 @@ const App = () => {
         <Route exact path={TILES} component={Tiles} />
         <Route exact path={OCCUPATIONS} component={Occupations} />
         <Route exact path={NUMBERS} component={Numbers} />
+        <Route exact path={WORDS} component={Words} />
+        <Route exact path={COLORS} component={Colors} />
       </Switch>
     </Router>
   );
