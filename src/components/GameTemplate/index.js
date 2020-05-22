@@ -1,1 +1,1 @@
-export { default } from './GameTemplate';
+export { default } from './OptionsSelector';
