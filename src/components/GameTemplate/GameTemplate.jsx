@@ -38,6 +38,7 @@ const GameTemplate = ({
     thisIsSound: null,
     feedbackSound: null,
   });
+  const maxNumberOfWrongAttempts = numberOfOptionsPerRound > 2 ? 1 : 0;
 
   useEffect(() => {
     let didCancel = false;
@@ -114,7 +115,7 @@ const GameTemplate = ({
       }, 3000);
     } else {
       negativeFeedbackSound.play();
-      if (state.wrongAttempts === 0) {
+      if (state.wrongAttempts < maxNumberOfWrongAttempts) {
         setTimeout(() => {
           setState({
             wrongAttempts: state.wrongAttempts + 1,
@@ -149,7 +150,7 @@ const GameTemplate = ({
       <div className="game-template__header">
         <h1 className="game-template__header--title">
           {state.isCompleted
-            ? state.wrongAttempts > 1
+            ? state.wrongAttempts > maxNumberOfWrongAttempts
               ? 'THIS IS'
               : ''
             : 'TOUCH'}
@@ -159,7 +160,7 @@ const GameTemplate = ({
             state.isCompleted ? 'is-correct' : ''
           } ${state.answer.name.length > 7 ? 'is-minimised' : ''}`}
         >
-          {state.isCompleted && state.wrongAttempts < 2
+          {state.isCompleted && state.wrongAttempts <= maxNumberOfWrongAttempts
             ? state.feedbackSound.phrase
             : state.answer.name}
         </h1>
