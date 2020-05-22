@@ -7,8 +7,10 @@ import UIFx from 'uifx';
 import DataLoader from 'components/DataLoader/DataLoader';
 import { getRandomElement, getNRandomElements } from 'utils/randomUtils';
 import { getNumberOfEqualOptions } from 'utils/gameUtils';
-import greatJobMp3 from 'assets/sounds/great-job.mp3';
-import wrongMp3 from 'assets/sounds/wrong.mp3';
+import {
+  positiveFeedbackSounds,
+  negativeFeedbackSound,
+} from './feedbackSounds';
 
 import './GameTemplate.scss';
 
@@ -17,9 +19,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(10),
   },
 }));
-
-const greatJobSound = new UIFx(greatJobMp3);
-const wrongSound = new UIFx(wrongMp3);
 
 // Refer to sampleOptions.js for example of how inputs should look like
 // Refer to routes/Occupations for example of how to use this component
@@ -37,6 +36,7 @@ const GameTemplate = ({
     wrongAttempts: 0,
     touchSound: null,
     thisIsSound: null,
+    feedbackSound: null,
   });
 
   useEffect(() => {
@@ -47,6 +47,7 @@ const GameTemplate = ({
       const answer = getRandomElement(options);
       const touchSound = new UIFx(answer.touchSound);
       const thisIsSound = new UIFx(answer.thisIsSound);
+      const feedbackSound = getRandomElement(positiveFeedbackSounds);
       if (!didCancel) {
         setState({
           options,
@@ -54,6 +55,7 @@ const GameTemplate = ({
           isLoading: false,
           touchSound,
           thisIsSound,
+          feedbackSound,
         });
       }
       setTimeout(() => {
@@ -88,22 +90,22 @@ const GameTemplate = ({
     }
     const touchSound = new UIFx(answer.touchSound);
     const thisIsSound = new UIFx(answer.thisIsSound);
+    const feedbackSound = getRandomElement(positiveFeedbackSounds);
     await setState({
       options,
       answer,
       isLoading: false,
       touchSound,
       thisIsSound,
+      feedbackSound,
     });
-    setTimeout(() => {
-      touchSound.play();
-    }, 1000);
+    touchSound.play();
   };
 
   const handleSelect = (option) => {
     const isCorrect = option === state.answer.name;
     if (isCorrect) {
-      greatJobSound.play();
+      state.feedbackSound.sound.play();
       setState({
         isCompleted: true,
       });
@@ -111,19 +113,23 @@ const GameTemplate = ({
         handleNewGame();
       }, 3000);
     } else {
-      wrongSound.play();
+      negativeFeedbackSound.play();
       if (state.wrongAttempts === 0) {
-        setState({
-          wrongAttempts: state.wrongAttempts + 1,
-        });
-        state.touchSound.play();
+        setTimeout(() => {
+          setState({
+            wrongAttempts: state.wrongAttempts + 1,
+          });
+          state.touchSound.play();
+        }, 1000);
         return;
       }
-      setState({
-        wrongAttempts: state.wrongAttempts + 1,
-        isCompleted: true,
-      });
-      state.thisIsSound.play();
+      setTimeout(() => {
+        setState({
+          wrongAttempts: state.wrongAttempts + 1,
+          isCompleted: true,
+        });
+        state.thisIsSound.play();
+      }, 1000);
       setTimeout(() => {
         handleNewGame();
       }, 4000);
@@ -154,7 +160,7 @@ const GameTemplate = ({
           } ${state.answer.name.length > 7 ? 'is-minimised' : ''}`}
         >
           {state.isCompleted && state.wrongAttempts < 2
-            ? 'GREAT JOB!'
+            ? state.feedbackSound.phrase
             : state.answer.name}
         </h1>
       </div>
