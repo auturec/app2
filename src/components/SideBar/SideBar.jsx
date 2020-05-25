@@ -8,10 +8,13 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import Collapse from '@material-ui/core/Collapse';
 
-import { publicRoutes } from 'constants/routes';
+import { publicRoutes, gameRoutes, ONBOARDING } from 'constants/routes';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
   },
@@ -21,15 +24,24 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
-});
+  nested: {
+    paddingLeft: theme.spacing(2),
+    color: 'teal',
+  },
+}));
 
 const SideBar = () => {
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
   });
+  const [open, setOpen] = React.useState(false);
 
-  const toggleDrawer = (side, open) => (event) => {
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  const toggleDrawer = (side, isDrawerOpen) => (event) => {
     if (
       event &&
       event.type === 'keydown' &&
@@ -37,20 +49,48 @@ const SideBar = () => {
     ) {
       return;
     }
-
-    setState({ ...state, [side]: open });
+    setState({ ...state, [side]: isDrawerOpen });
   };
 
   const sideList = (side) => (
     <div
       className={classes.list}
       role="presentation"
-      onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
+        <Link
+          to={ONBOARDING}
+          key="public-link-onboarding"
+          onClick={toggleDrawer(side, false)}
+        >
+          <ListItem button>
+            <ListItemText primary="Onboarding" className={classes.listItem} />
+          </ListItem>
+        </Link>
+        <ListItem button onClick={handleClick}>
+          <ListItemText primary="Games" className={classes.listItem} />{' '}
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          {gameRoutes.map((route) => (
+            <Link
+              to={route.path}
+              key={`public-link-${route.name}`}
+              onClick={toggleDrawer(side, false)}
+            >
+              <ListItem button>
+                <ListItemText primary={route.name} className={classes.nested} />
+              </ListItem>
+            </Link>
+          ))}
+        </Collapse>
         {publicRoutes.map((route) => (
-          <Link to={route.path} key={`public-link-${route.name}`}>
+          <Link
+            to={route.path}
+            key={`public-link-${route.name}`}
+            onClick={toggleDrawer(side, false)}
+          >
             <ListItem button>
               <ListItemText primary={route.name} className={classes.listItem} />
             </ListItem>

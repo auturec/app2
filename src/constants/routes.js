@@ -14,10 +14,6 @@ export const WORDS = '/language/words';
 
 export const publicRoutes = [
   {
-    path: ONBOARDING,
-    name: 'Home',
-  },
-  {
     path: TESTIMONIAL,
     name: 'Testimonial',
   },
@@ -25,6 +21,9 @@ export const publicRoutes = [
     path: FAQ,
     name: 'FAQ',
   },
+];
+
+export const gameRoutes = [
   {
     path: ASSOCIATE,
     name: 'Associate',
