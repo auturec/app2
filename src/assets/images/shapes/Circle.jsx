@@ -1,10 +1,16 @@
 import * as React from 'react';
+import circle from './circle.png';
 
-function Circle({ height = 500, width = 500 }) {
+function Circle({ height = 512, width = 512, style }) {
   return (
-    <svg height={height} viewBox="0 0 500 500" width={width}>
-      <circle cx="150" cy="150" r="125" fill="yellow" />
-    </svg>
+    <img
+      src={circle}
+      height={height}
+      alt="circle"
+      viewBox="0 0 512 512"
+      width={width}
+      style={style}
+    />
   );
 }
 

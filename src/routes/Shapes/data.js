@@ -24,4 +24,14 @@ export const shapesData = [
     name: 'Star',
     ...shapeSounds.Star,
   },
+  {
+    component: <ShapeSvg.Heart style={{ height: 'auto' }} />,
+    name: 'Heart',
+    ...shapeSounds.Heart,
+  },
+  {
+    component: <ShapeSvg.Triangle style={{ height: 'auto' }} />,
+    name: 'Triangle',
+    ...shapeSounds.Triangle,
+  },
 ];

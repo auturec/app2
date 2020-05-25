@@ -1,12 +1,12 @@
 import * as React from 'react';
-import square from './square.png';
+import heart from './heart.png';
 
-function Square({ height = 512, width = 512, style }) {
+function Heart({ height = 512, width = 512, style }) {
   return (
     <img
-      src={square}
+      src={heart}
       height={height}
-      alt="square"
+      alt="heart"
       viewBox="0 0 512 512"
       width={width}
       style={style}
@@ -14,4 +14,4 @@ function Square({ height = 512, width = 512, style }) {
   );
 }
 
-export default Square;
+export default Heart;

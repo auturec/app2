@@ -1,10 +1,16 @@
 import * as React from 'react';
+import rectangle from './rectangle.png';
 
-function Rectangle({ height = 500, width = 500 }) {
+function Rectangle({ height = 512, width = 512, style }) {
   return (
-    <svg height={height} viewBox="0 0 500 500" width={width}>
-      <rect x="20" y="20" width="300" height="225" fill="green" />
-    </svg>
+    <img
+      src={rectangle}
+      height={height}
+      alt="rectangle"
+      viewBox="0 0 512 512"
+      width={width}
+      style={style}
+    />
   );
 }
 
