@@ -11,6 +11,7 @@ export const COLORS = '/cognitive/colors';
 export const OCCUPATIONS = '/language/occupations';
 export const NUMBERS = '/numbers';
 export const WORDS = '/language/words';
+export const SHAPES = '/shapes';
 
 export const publicRoutes = [
   {
@@ -48,5 +49,9 @@ export const publicRoutes = [
   {
     path: WORDS,
     name: 'Words',
+  },
+  {
+    path: SHAPES,
+    name: 'Shapes',
   },
 ];
