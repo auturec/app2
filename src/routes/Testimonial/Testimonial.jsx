@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
+import TimeAgo from 'react-timeago';
 
 const useStyles = makeStyles(() => ({
   card: {
@@ -8,31 +9,31 @@ const useStyles = makeStyles(() => ({
     width: '100%',
     borderRadius: '10px',
     padding: '20px',
-    margin: '10px 0px'
+    margin: '10px 0px',
   },
   header: {
-    display: 'flex'
+    display: 'flex',
   },
   body: {
     margin: '10px',
-    color: 'teal'
+    color: 'teal',
   },
   profilePic: {
-    margin: '10px'
+    margin: '10px',
   },
   userInfo: {
     fontSize: '20px',
     color: 'grey',
     margin: '10px',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   large: {
     width: '60px',
-    height: '60px'
-  }
+    height: '60px',
+  },
 }));
 
-const Testimonial = ({ userName, profilePic, userInfo, comment }) => {
+const Testimonial = ({ userName, profilePic, date, comment }) => {
   const classes = useStyles();
   return (
     <div className={classes.card}>
@@ -42,7 +43,9 @@ const Testimonial = ({ userName, profilePic, userInfo, comment }) => {
         </div>
         <div className={classes.userInfo}>
           <div>{userName}</div>
-          <div>{userInfo}</div>
+          <div>
+            <TimeAgo date={date} />
+          </div>
         </div>
       </div>
       <div className={classes.body}>{comment}</div>
