@@ -65,7 +65,7 @@ const SideBar = () => {
           onClick={toggleDrawer(side, false)}
         >
           <ListItem button>
-            <ListItemText primary="Onboarding" className={classes.listItem} />
+            <ListItemText primary="Home" className={classes.listItem} />
           </ListItem>
         </Link>
         <ListItem button onClick={handleClick}>

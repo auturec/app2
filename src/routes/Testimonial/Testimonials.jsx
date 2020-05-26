@@ -22,7 +22,7 @@ const Testimonials = () => {
             key={testimonial.id}
             userName={testimonial.userName}
             profilePic={testimonial.profilePic}
-            userInfo={testimonial.userInfo}
+            date={testimonial.date}
             comment={testimonial.comment}
           />
         ))}
