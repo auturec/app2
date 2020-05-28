@@ -152,7 +152,7 @@ const GameTemplate = ({
     <div className={`game-template ${classes.paper} ${className}`}>
       <div className="game-template__header">
         <h1 className="game-template__header--title">
-          {state.isCompleted ? ' ' : 'TOUCH'}
+          {state.isCompleted ? <>&nbsp;</> : 'TOUCH'}
         </h1>
         <h1
           className={`game-template__header--answer ${

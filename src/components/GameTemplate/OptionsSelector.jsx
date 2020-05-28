@@ -37,6 +37,7 @@ const OptionsSelector = ({ allOptions }) => {
   return (
     <Container component="main" maxWidth="sm">
       <div className={`options-selector ${classes.paper}`}>
+        <br />
         <h2>Please select the number of options presented in each round:</h2>
         <Button
           variant="contained"
