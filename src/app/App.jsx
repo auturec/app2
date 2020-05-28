@@ -14,6 +14,7 @@ import Occupations from 'routes/Languages/Occupations';
 import Numbers from 'routes/Numbers';
 import Words from 'routes/Languages/Words';
 import Colors from 'routes/Cognitive/Colors';
+import TilesDrag from 'routes/TilesDrag';
 
 import {
   TESTIMONIAL,
@@ -25,6 +26,7 @@ import {
   NUMBERS,
   COLORS,
   WORDS,
+  JUST_TILES,
 } from 'constants/routes';
 
 const App = () => {
@@ -41,6 +43,7 @@ const App = () => {
         <Route exact path={NUMBERS} component={Numbers} />
         <Route exact path={WORDS} component={Words} />
         <Route exact path={COLORS} component={Colors} />
+        <Route exact path={JUST_TILES} component={TilesDrag} />
       </Switch>
     </Router>
   );

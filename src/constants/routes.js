@@ -11,6 +11,7 @@ export const COLORS = '/cognitive/colors';
 export const OCCUPATIONS = '/language/occupations';
 export const NUMBERS = '/numbers';
 export const WORDS = '/language/words';
+export const JUST_TILES = '/tiles';
 
 export const publicRoutes = [
   {
@@ -47,5 +48,9 @@ export const gameRoutes = [
   {
     path: WORDS,
     name: 'Words',
+  },
+  {
+    path: JUST_TILES,
+    name: 'Tile Drag',
   },
 ];
