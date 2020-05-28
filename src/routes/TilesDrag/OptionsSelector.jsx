@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Button } from '@material-ui/core';
 
-import { useGameTemplate } from 'contexts/GameTemplateContext';
+import { useGame } from 'contexts/GameContext';
 import TilesDrag from './TilesDrag';
 
 import './TilesDrag.scss';
@@ -9,7 +9,7 @@ import './TilesDrag.scss';
 const OptionsSelector = () => {
   const [numberOfColors, setNumberOfColors] = useState(null);
 
-  const { isResettingGame, setIsResettingGame } = useGameTemplate();
+  const { isResettingGame, setIsResettingGame } = useGame();
 
   useEffect(() => {
     if (isResettingGame) {

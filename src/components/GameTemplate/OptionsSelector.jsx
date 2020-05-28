@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Button } from '@material-ui/core';
 
-import { useGameTemplate } from 'contexts/GameTemplateContext';
+import { useGame } from 'contexts/GameContext';
 import GameTemplate from './GameTemplate';
 
 import './GameTemplate.scss';
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 const OptionsSelector = ({ allOptions }) => {
   const [numberOfOptionsPerRound, setNumberOfOptionsPerRound] = useState(null);
   const classes = useStyles();
-  const { isResettingGame, setIsResettingGame } = useGameTemplate();
+  const { isResettingGame, setIsResettingGame } = useGame();
 
   useEffect(() => {
     if (isResettingGame) {

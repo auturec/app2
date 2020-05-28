@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-const GameTemplateContext = React.createContext();
+const GameContext = React.createContext();
 
 // Allows user data to be accessible from everywhere
-const GameTemplateProvider = (props) => {
+const GameProvider = (props) => {
   const [isResettingGame, setIsResettingGame] = useState(false);
   return (
-    <GameTemplateContext.Provider
+    <GameContext.Provider
       value={{ isResettingGame, setIsResettingGame }}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
@@ -14,14 +14,12 @@ const GameTemplateProvider = (props) => {
   );
 };
 
-const useGameTemplate = () => {
-  const context = React.useContext(GameTemplateContext);
+const useGame = () => {
+  const context = React.useContext(GameContext);
   if (context === undefined) {
-    throw new Error(
-      'useGameTemplate must be used within a GameTemplateProvider'
-    );
+    throw new Error('useGame must be used within a GameProvider');
   }
   return context;
 };
 
-export { GameTemplateProvider, useGameTemplate };
+export { GameProvider, useGame };
