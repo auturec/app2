@@ -13,6 +13,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 
 import { publicRoutes, gameRoutes, ONBOARDING } from 'constants/routes';
+import { useGameTemplate } from 'contexts/GameTemplateContext';
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SideBar = () => {
+  const { setIsResettingGame } = useGameTemplate();
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -77,7 +79,10 @@ const SideBar = () => {
             <Link
               to={route.path}
               key={`public-link-${route.name}`}
-              onClick={toggleDrawer(side, false)}
+              onClick={(event) => {
+                setIsResettingGame(true);
+                toggleDrawer(side, false)(event);
+              }}
             >
               <ListItem button>
                 <ListItemText primary={route.name} className={classes.nested} />
