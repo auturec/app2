@@ -5,7 +5,15 @@ import { Container, Button } from '@material-ui/core';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import { CSS_COLOR_NAMES } from 'constants/colors';
-import { getNRandomElements, shuffleArray } from 'utils/randomUtils';
+import {
+  getNRandomElements,
+  shuffleArray,
+  getRandomElement,
+} from 'utils/randomUtils';
+import {
+  positiveFeedbackSounds,
+  negativeFeedbackSound,
+} from 'components/GameTemplate/feedbackSounds';
 import Tile from './Tile';
 
 import './TilesDrag.scss';
@@ -29,6 +37,7 @@ const TilesDrag = ({ numberOfColors = 4 }) => {
     bottomLeft: [],
     bottomRight: [],
     optionsBar: shuffleArray(colors.slice()),
+    feedbackSound: getRandomElement(positiveFeedbackSounds),
   });
 
   const [isCorrect, setIsCorrect] = useState(null);
@@ -50,6 +59,7 @@ const TilesDrag = ({ numberOfColors = 4 }) => {
       bottomLeft: [],
       bottomRight: [],
       optionsBar: shuffleArray(newColors.slice()),
+      feedbackSound: getRandomElement(positiveFeedbackSounds),
     });
   };
 
@@ -71,8 +81,10 @@ const TilesDrag = ({ numberOfColors = 4 }) => {
     }
     if (equal) {
       setIsCorrect(true);
+      state.feedbackSound.sound.play();
     } else if (answers.length === solution.length) {
       setIsCorrect(false);
+      negativeFeedbackSound.play();
     } else {
       setIsCorrect(null);
     }
@@ -82,6 +94,7 @@ const TilesDrag = ({ numberOfColors = 4 }) => {
     state.bottomLeft,
     state.bottomRight,
     colors,
+    state.feedbackSound.sound,
   ]);
 
   const onDragEnd = (result) => {
@@ -263,7 +276,7 @@ const TilesDrag = ({ numberOfColors = 4 }) => {
                 state.optionsBar.length > 0
                   ? ''
                   : isCorrect
-                  ? 'EXCELLENT!'
+                  ? state.feedbackSound.phrase
                   : 'ALMOST THERE!'}
                 {state.optionsBar.map((c, i) => (
                   <Tile tile={c} index={i} key={c.id} />
