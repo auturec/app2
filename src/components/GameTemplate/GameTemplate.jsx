@@ -107,15 +107,18 @@ const GameTemplate = ({
     const isCorrect = option === state.answer.name;
     if (isCorrect) {
       state.feedbackSound.sound.play();
+      setTimeout(() => {
+        state.thisIsSound.play();
+      }, 1000);
       setState({
         isCompleted: true,
       });
       setTimeout(() => {
         handleNewGame();
-      }, 3000);
+      }, 4500);
     } else {
       negativeFeedbackSound.play();
-      if (state.wrongAttempts < maxNumberOfWrongAttempts) {
+      if (state.wrongAttempts <= maxNumberOfWrongAttempts) {
         setTimeout(() => {
           setState({
             wrongAttempts: state.wrongAttempts + 1,
@@ -149,20 +152,14 @@ const GameTemplate = ({
     <div className={`game-template ${classes.paper} ${className}`}>
       <div className="game-template__header">
         <h1 className="game-template__header--title">
-          {state.isCompleted
-            ? state.wrongAttempts > maxNumberOfWrongAttempts
-              ? 'THIS IS'
-              : ''
-            : 'TOUCH'}
+          {state.isCompleted ? ' ' : 'TOUCH'}
         </h1>
         <h1
           className={`game-template__header--answer ${
             state.isCompleted ? 'is-correct' : ''
           } ${state.answer.name.length > 7 ? 'is-minimised' : ''}`}
         >
-          {state.isCompleted && state.wrongAttempts <= maxNumberOfWrongAttempts
-            ? state.feedbackSound.phrase
-            : state.answer.name}
+          {state.isCompleted ? state.feedbackSound.phrase : state.answer.name}
         </h1>
       </div>
       <div className="game-template__options">
@@ -172,7 +169,8 @@ const GameTemplate = ({
               <Button
                 variant="contained"
                 className={`button game-template__options--button ${
-                  state.isCompleted
+                  state.isCompleted ||
+                  state.wrongAttempts > maxNumberOfWrongAttempts
                     ? o.name === state.answer.name
                       ? 'is-correct'
                       : 'is-wrong'
