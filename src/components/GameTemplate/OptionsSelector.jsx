@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     fontFamily: 'Open Sans',
+    fontSize: '30px',
   },
   button: {
     fontFamily: 'Montserrat',
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       background: 'teal',
     },
+    fontSize: '16px',
   },
 }));
 

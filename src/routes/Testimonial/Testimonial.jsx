@@ -5,7 +5,7 @@ import TimeAgo from 'react-timeago';
 
 const useStyles = makeStyles(() => ({
   card: {
-    border: '1px #9ac555 solid',
+    border: '1px #2c1e1a solid',
     width: '100%',
     borderRadius: '10px',
     padding: '20px',
@@ -17,15 +17,16 @@ const useStyles = makeStyles(() => ({
   },
   body: {
     margin: '10px',
-    color: '#9ac555',
+    color: '#2c1e1a',
     fontFamily: 'Montserrat',
+    fontSize: '16px',
   },
   profilePic: {
     margin: '10px',
   },
   userInfo: {
     fontSize: '20px',
-    color: 'grey',
+    color: '#9ac555',
     margin: '10px',
     fontWeight: 'bold',
   },

@@ -17,20 +17,30 @@ import { publicRoutes, gameRoutes, ONBOARDING } from 'constants/routes';
 import { useGameTemplate } from 'contexts/GameTemplateContext';
 
 const useStyles = makeStyles((theme) => ({
+  drawer: {
+    background: '#9ac555',
+  },
   list: {
     width: 250,
+    background: '#9ac555',
+    height: '100%',
   },
   listItem: {
-    color: '#9ac555',
+    color: '#FFFFFF',
     fontFamily: 'Open Sans',
+    fontSize: '18px',
   },
   fullList: {
     width: 'auto',
   },
   nested: {
     paddingLeft: theme.spacing(2),
-    color: '#9ac555',
+    color: '#FFFFFF',
     fontFamily: 'Open Sans',
+    fontSize: '18px',
+  },
+  divider: {
+    backgroundColor: '#FFFFFF',
   },
 }));
 
@@ -89,7 +99,11 @@ const SideBar = () => {
               </Typography>
             }
           />
-          {open ? <ExpandLess /> : <ExpandMore />}
+          {open ? (
+            <ExpandLess className={classes.listItem} />
+          ) : (
+            <ExpandMore className={classes.listItem} />
+          )}
         </ListItem>
         <Collapse in={open} timeout="auto" unmountOnExit>
           {gameRoutes.map((route) => (
@@ -133,7 +147,7 @@ const SideBar = () => {
           </Link>
         ))}
       </List>
-      <Divider />
+      <Divider className={classes.divider} />
     </div>
   );
 

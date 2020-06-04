@@ -48,11 +48,13 @@ const ExpansionPanelDetails = withStyles((theme) => ({
 
 const useStyles = makeStyles(() => ({
   faqQuestion: {
-    color: '#9ac555',
+    color: '#2c1e1a',
     fontFamily: 'Open Sans',
+    fontSize: '18px',
   },
   faqText: {
     fontFamily: 'Montserrat',
+    fontSize: '16px',
   },
 }));
 

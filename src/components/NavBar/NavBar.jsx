@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     color: 'white',
     fontFamily: 'Open Sans',
+    fontSize: '30px',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },

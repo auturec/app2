@@ -22,6 +22,7 @@ const useStyles = makeStyles(() => ({
     marginTop: '10px',
     fontWeight: 'bold',
     fontFamily: 'Montserrat',
+    color: '#2c1e1a',
   },
 }));
 

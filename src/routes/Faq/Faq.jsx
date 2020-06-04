@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   header: {
     fontWeight: 'bold',
     fontSize: '30px',
-    color: '#9ac555',
+    color: '#2c1e1a',
     textAlign: 'center',
     fontFamily: 'Open Sans',
   },
@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tab: {
     color: '#9ac555',
+    fontSize: '18px',
   },
   faqLogo: {
     display: 'block',
