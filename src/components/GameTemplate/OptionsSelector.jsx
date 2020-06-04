@@ -14,8 +14,12 @@ const useStyles = makeStyles((theme) => ({
   header: {
     fontFamily: 'Open Sans',
   },
-  buttonText: {
+  button: {
     fontFamily: 'Montserrat',
+    background: '#9ac555',
+    '&:hover': {
+      background: 'teal',
+    },
   },
 }));
 
@@ -48,9 +52,8 @@ const OptionsSelector = ({ allOptions }) => {
           Please select the number of options presented in each round:
         </h2>
         <Button
-          className={classes.buttonText}
+          className={classes.button}
           variant="contained"
-          color="primary"
           size="large"
           fullWidth
           onClick={() => setNumberOfOptionsPerRound(2)}
@@ -58,9 +61,8 @@ const OptionsSelector = ({ allOptions }) => {
           TWO
         </Button>
         <Button
-          className={classes.buttonText}
+          className={classes.button}
           variant="contained"
-          color="primary"
           size="large"
           fullWidth
           onClick={() => setNumberOfOptionsPerRound(3)}
@@ -68,9 +70,8 @@ const OptionsSelector = ({ allOptions }) => {
           THREE
         </Button>
         <Button
-          className={classes.buttonText}
+          className={classes.button}
           variant="contained"
-          color="primary"
           size="large"
           fullWidth
           onClick={() => setNumberOfOptionsPerRound(4)}
