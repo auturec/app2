@@ -11,6 +11,12 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(10),
   },
+  header: {
+    fontFamily: 'Open Sans',
+  },
+  buttonText: {
+    fontFamily: 'Montserrat',
+  },
 }));
 
 const OptionsSelector = ({ allOptions }) => {
@@ -38,8 +44,11 @@ const OptionsSelector = ({ allOptions }) => {
     <Container component="main" maxWidth="sm">
       <div className={`options-selector ${classes.paper}`}>
         <br />
-        <h2>Please select the number of options presented in each round:</h2>
+        <h2 className={classes.header}>
+          Please select the number of options presented in each round:
+        </h2>
         <Button
+          className={classes.buttonText}
           variant="contained"
           color="primary"
           size="large"
@@ -49,6 +58,7 @@ const OptionsSelector = ({ allOptions }) => {
           TWO
         </Button>
         <Button
+          className={classes.buttonText}
           variant="contained"
           color="primary"
           size="large"
@@ -58,6 +68,7 @@ const OptionsSelector = ({ allOptions }) => {
           THREE
         </Button>
         <Button
+          className={classes.buttonText}
           variant="contained"
           color="primary"
           size="large"
