@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   header: {
     fontWeight: 'bold',
     fontSize: '30px',
-    color: 'teal',
+    color: '#9ac555',
     textAlign: 'center',
   },
   tabsPanel: {
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '20px',
   },
   tab: {
-    color: 'teal',
+    color: '#9ac555',
   },
   faqLogo: {
     display: 'block',
@@ -50,7 +50,7 @@ export default function Forum() {
         <img src={FaqLogo} alt="" className={classes.faqLogo} />
         <AppBar position="static" color="default" className={classes.tabsPanel}>
           <Tabs
-            TabIndicatorProps={{ style: { background: 'teal' } }}
+            TabIndicatorProps={{ style: { background: '#9ac555' } }}
             value={value}
             onChange={handleChange}
             variant="fullWidth"

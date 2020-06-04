@@ -20,14 +20,14 @@ const useStyles = makeStyles((theme) => ({
     width: 250,
   },
   listItem: {
-    color: 'teal',
+    color: '#9ac555',
   },
   fullList: {
     width: 'auto',
   },
   nested: {
     paddingLeft: theme.spacing(2),
-    color: 'teal',
+    color: '#9ac555',
   },
 }));
 
