@@ -11,6 +11,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
+import Typography from '@material-ui/core/Typography';
 
 import { publicRoutes, gameRoutes, ONBOARDING } from 'constants/routes';
 import { useGameTemplate } from 'contexts/GameTemplateContext';
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   listItem: {
     color: '#9ac555',
+    fontFamily: 'Open Sans',
   },
   fullList: {
     width: 'auto',
@@ -28,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(2),
     color: '#9ac555',
+    fontFamily: 'Open Sans',
   },
 }));
 
@@ -67,11 +70,25 @@ const SideBar = () => {
           onClick={toggleDrawer(side, false)}
         >
           <ListItem button>
-            <ListItemText primary="Home" className={classes.listItem} />
+            <ListItemText
+              disableTypography
+              primary={
+                <Typography type="h1" className={classes.listItem}>
+                  Home
+                </Typography>
+              }
+            />
           </ListItem>
         </Link>
         <ListItem button onClick={handleClick}>
-          <ListItemText primary="Games" className={classes.listItem} />{' '}
+          <ListItemText
+            disableTypography
+            primary={
+              <Typography type="h1" className={classes.listItem}>
+                Games
+              </Typography>
+            }
+          />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={open} timeout="auto" unmountOnExit>
@@ -85,7 +102,14 @@ const SideBar = () => {
               }}
             >
               <ListItem button>
-                <ListItemText primary={route.name} className={classes.nested} />
+                <ListItemText
+                  disableTypography
+                  primary={
+                    <Typography type="h1" className={classes.nested}>
+                      {route.name}
+                    </Typography>
+                  }
+                />
               </ListItem>
             </Link>
           ))}
@@ -97,7 +121,14 @@ const SideBar = () => {
             onClick={toggleDrawer(side, false)}
           >
             <ListItem button>
-              <ListItemText primary={route.name} className={classes.listItem} />
+              <ListItemText
+                disableTypography
+                primary={
+                  <Typography type="h1" className={classes.listItem}>
+                    {route.name}
+                  </Typography>
+                }
+              />
             </ListItem>
           </Link>
         ))}

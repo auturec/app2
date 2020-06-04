@@ -49,6 +49,10 @@ const ExpansionPanelDetails = withStyles((theme) => ({
 const useStyles = makeStyles(() => ({
   faqQuestion: {
     color: '#9ac555',
+    fontFamily: 'Open Sans',
+  },
+  faqText: {
+    fontFamily: 'Montserrat',
   },
 }));
 
@@ -78,7 +82,7 @@ const FaqExpansionPanels = ({ faqs }) => {
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>{faq.answer}</Typography>
+            <Typography className={classes.faqText}>{faq.answer}</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       ))}

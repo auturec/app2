@@ -13,10 +13,12 @@ const useStyles = makeStyles(() => ({
   },
   header: {
     display: 'flex',
+    fontFamily: 'Open Sans',
   },
   body: {
     margin: '10px',
     color: '#9ac555',
+    fontFamily: 'Montserrat',
   },
   profilePic: {
     margin: '10px',

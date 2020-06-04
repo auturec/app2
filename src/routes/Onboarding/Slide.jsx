@@ -14,12 +14,14 @@ const useStyles = makeStyles(() => ({
     marginLeft: '10px',
     marginTop: '30px',
     fontWeight: 'bold',
+    fontFamily: 'Open Sans',
   },
   subheader: {
     fontSize: '20px',
     marginLeft: '10px',
     marginTop: '10px',
     fontWeight: 'bold',
+    fontFamily: 'Montserrat',
   },
 }));
 

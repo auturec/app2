@@ -17,6 +17,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '30px',
     color: '#9ac555',
     textAlign: 'center',
+    fontFamily: 'Open Sans',
+  },
+  tabsHeader: {
+    fontFamily: 'Open Sans',
   },
   tabsPanel: {
     marginTop: '30px',

@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     display: 'none',
     color: 'white',
+    fontFamily: 'Open Sans',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
