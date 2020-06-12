@@ -1,50 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { Container, Button } from '@material-ui/core';
 
 import { useGame } from 'contexts/GameContext';
-import GameTemplate from './GameTemplate';
+import TilesDrag from './TilesDrag';
 
-import './GameTemplate.scss';
+import './TilesDrag.scss';
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(10),
-  },
-}));
+const OptionsSelector = () => {
+  const [numberOfColors, setNumberOfColors] = useState(null);
 
-const OptionsSelector = ({ allOptions }) => {
-  const [numberOfOptionsPerRound, setNumberOfOptionsPerRound] = useState(null);
-  const classes = useStyles();
   const { isResettingGame, setIsResettingGame } = useGame();
 
   useEffect(() => {
     if (isResettingGame) {
-      setNumberOfOptionsPerRound(null);
+      setNumberOfColors(null);
       setIsResettingGame(false);
     }
   }, [isResettingGame, setIsResettingGame]);
 
-  if (numberOfOptionsPerRound) {
-    return (
-      <GameTemplate
-        allOptions={allOptions}
-        numberOfOptionsPerRound={numberOfOptionsPerRound}
-      />
-    );
+  if (numberOfColors) {
+    return <TilesDrag numberOfColors={numberOfColors} />;
   }
 
   return (
     <Container component="main" maxWidth="sm">
-      <div className={`options-selector ${classes.paper}`}>
-        <br />
-        <h2>Please select the number of options presented in each round:</h2>
+      <div className="options-selector">
+        <h2>Please select the number of colours presented in each round:</h2>
         <Button
           variant="contained"
           color="primary"
           size="large"
           fullWidth
-          onClick={() => setNumberOfOptionsPerRound(2)}
+          onClick={() => setNumberOfColors(2)}
         >
           TWO
         </Button>
@@ -53,7 +40,7 @@ const OptionsSelector = ({ allOptions }) => {
           color="primary"
           size="large"
           fullWidth
-          onClick={() => setNumberOfOptionsPerRound(3)}
+          onClick={() => setNumberOfColors(3)}
         >
           THREE
         </Button>
@@ -62,7 +49,7 @@ const OptionsSelector = ({ allOptions }) => {
           color="primary"
           size="large"
           fullWidth
-          onClick={() => setNumberOfOptionsPerRound(4)}
+          onClick={() => setNumberOfColors(4)}
         >
           FOUR
         </Button>

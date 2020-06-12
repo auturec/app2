@@ -4,9 +4,15 @@ export const getRandomElement = (items) => {
 
 export const getNRandomElements = (items, n) => {
   const copy = items.slice();
-  // eslint-disable-next-line no-unused-vars
-  copy.sort((_a, _b) => 0.5 - Math.random());
-  return copy.slice(0, n);
+  if (copy.length >= n) {
+    // eslint-disable-next-line no-unused-vars
+    copy.sort((_a, _b) => 0.5 - Math.random());
+    return copy.slice(0, n);
+  }
+  while (copy.length < n) {
+    copy.push(items[Math.floor(Math.random() * items.length)]);
+  }
+  return copy;
 };
 
 /**
