@@ -30,10 +30,6 @@ export const gameRoutes = [
     name: 'Associate',
   },
   {
-    path: TILES,
-    name: 'Tiles',
-  },
-  {
     path: COLORS,
     name: 'Colors',
   },
@@ -51,6 +47,6 @@ export const gameRoutes = [
   },
   {
     path: JUST_TILES,
-    name: 'Tile Drag',
+    name: 'Tiles',
   },
 ];
