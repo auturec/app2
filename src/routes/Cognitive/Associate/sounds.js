@@ -19,21 +19,21 @@ import touchTrain from 'assets/sounds/associate/touch-train.mp3';
 import touchTruck from 'assets/sounds/associate/touch-truck.mp3';
 import touchWheel from 'assets/sounds/associate/touch-wheel.mp3';
 
-import thisIsBike from 'assets/sounds/associate/this is bike.mp3';
-import thisIsCarpet from 'assets/sounds/associate/this is carpet.mp3';
-import thisIsChair from 'assets/sounds/associate/this is chair.mp3';
-import thisIsCow from 'assets/sounds/associate/this is cow.mp3';
-import thisIsCrab from 'assets/sounds/associate/this is crab.mp3';
-import thisIsDeer from 'assets/sounds/associate/this is deer.mp3';
-import thisIsGrandfatherClock from 'assets/sounds/associate/this is grandfatherclock.mp3';
-import thisIsChicken from 'assets/sounds/associate/this is chicken.mp3';
-import thisIsLamp from 'assets/sounds/associate/this is lamp.mp3';
-import thisIsPig from 'assets/sounds/associate/this is pig.mp3';
-import thisIsScooter from 'assets/sounds/associate/this is scooter.mp3';
-import thisIsTableLamp from 'assets/sounds/associate/this is table lamp.mp3';
-import thisIsTrain from 'assets/sounds/associate/this is train.mp3';
-import thisIsTruck from 'assets/sounds/associate/this is truck.mp3';
-import thisIsWheel from 'assets/sounds/associate/this is wheel.mp3';
+import thisIsBike from 'assets/sounds/associate/this-is-bike.mp3';
+import thisIsCarpet from 'assets/sounds/associate/this-is-carpet.mp3';
+import thisIsChair from 'assets/sounds/associate/this-is-chair.mp3';
+import thisIsCow from 'assets/sounds/associate/this-is-cow.mp3';
+import thisIsCrab from 'assets/sounds/associate/this-is-crab.mp3';
+import thisIsDeer from 'assets/sounds/associate/this-is-deer.mp3';
+import thisIsGrandfatherClock from 'assets/sounds/associate/this-is-grandfatherclock.mp3';
+import thisIsChicken from 'assets/sounds/associate/this-is-chicken.mp3';
+import thisIsLamp from 'assets/sounds/associate/this-is-lamp.mp3';
+import thisIsPig from 'assets/sounds/associate/this-is-pig.mp3';
+import thisIsScooter from 'assets/sounds/associate/this-is-scooter.mp3';
+import thisIsTableLamp from 'assets/sounds/associate/this-is-table-lamp.mp3';
+import thisIsTrain from 'assets/sounds/associate/this-is-train.mp3';
+import thisIsTruck from 'assets/sounds/associate/this-is-truck.mp3';
+import thisIsWheel from 'assets/sounds/associate/this-is-wheel.mp3';
 
 export const associateSounds = {
   bike: {
