@@ -6,7 +6,7 @@ function Circle({ height = 512, width = 512, style }) {
     <img
       src={circle}
       height={height}
-      alt="circle"
+      alt="rectangle"
       viewBox="0 0 512 512"
       width={width}
       style={style}

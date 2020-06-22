@@ -6,7 +6,7 @@ function Square({ height = 512, width = 512, style }) {
     <img
       src={square}
       height={height}
-      alt="square"
+      alt="rectangle"
       viewBox="0 0 512 512"
       width={width}
       style={style}

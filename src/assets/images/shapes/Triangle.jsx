@@ -6,7 +6,7 @@ function Triangle({ height = 512, width = 512, style }) {
     <img
       src={triangle}
       height={height}
-      alt="triangle"
+      alt="rectangle"
       viewBox="0 0 512 512"
       width={width}
       style={style}
