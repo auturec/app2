@@ -6,7 +6,7 @@ function Star({ height = 512, width = 512, style }) {
     <img
       src={star}
       height={height}
-      alt="rectangle"
+      alt="star"
       viewBox="0 0 512 512"
       width={width}
       style={style}

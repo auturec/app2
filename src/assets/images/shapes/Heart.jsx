@@ -6,7 +6,7 @@ function Heart({ height = 512, width = 512, style }) {
     <img
       src={heart}
       height={height}
-      alt="rectangle"
+      alt="heart"
       viewBox="0 0 512 512"
       width={width}
       style={style}
