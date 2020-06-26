@@ -8,7 +8,7 @@ import { TestimonialsData } from './TestimonialsData';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(4),
   },
 }));
 
