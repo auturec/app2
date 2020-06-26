@@ -26,21 +26,17 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
   },
   listItem: {
-    color: '#FFFFFF',
-    fontFamily: 'Open Sans',
     fontSize: '18px',
+    color: 'black',
+    fontFamily: 'Open Sans',
   },
   fullList: {
     width: 'auto',
   },
   nested: {
     paddingLeft: theme.spacing(2),
-    color: '#FFFFFF',
-    fontFamily: 'Open Sans',
-    fontSize: '18px',
-  },
-  divider: {
-    backgroundColor: '#FFFFFF',
+    color: 'black',
+    fontSize: '16px',
   },
 }));
 
@@ -147,7 +143,7 @@ const SideBar = () => {
           </Link>
         ))}
       </List>
-      <Divider className={classes.divider} />
+      <Divider />
     </div>
   );
 

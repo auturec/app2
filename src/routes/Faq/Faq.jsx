@@ -10,7 +10,7 @@ import { FaqData } from './FaqData';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10),
+    paddingTop: theme.spacing(10),
   },
   header: {
     fontWeight: 'bold',

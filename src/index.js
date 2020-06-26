@@ -16,6 +16,14 @@ const AppRender = () => {
     typography: {
       fontFamily: 'Montserrat, sans-serif',
     },
+    palette: {
+      primary: {
+        main: '#9ac555',
+      },
+      secondary: {
+        main: '#e28e36',
+      },
+    },
   });
 
   return (

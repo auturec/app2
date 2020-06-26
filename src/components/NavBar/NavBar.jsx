@@ -9,6 +9,10 @@ import SideBar from 'components/SideBar';
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
+    height: '56px',
+    [theme.breakpoints.up('sm')]: {
+      height: '64px',
+    },
   },
   appBar: {
     background: '#9ac555',
@@ -17,10 +21,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    display: 'none',
-    color: 'white',
+    paddingLeft: theme.spacing(2),
     fontFamily: 'Open Sans',
-    fontSize: '30px',
+    display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
