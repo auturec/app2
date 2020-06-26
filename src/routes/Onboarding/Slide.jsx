@@ -2,16 +2,16 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   characterSlide: {
     height: '300px',
     margin: '0 auto',
     marginTop: '30px',
   },
   header: {
-    color: '#9ac555',
-    fontSize: '30px',
-    marginLeft: '10px',
+    color: theme.palette.secondary.main,
+    fontSize: '1.8rem',
+    marginLeft: theme.spacing(2),
     marginTop: '30px',
     fontWeight: '600',
     fontFamily: 'Open Sans',
@@ -20,8 +20,7 @@ const useStyles = makeStyles(() => ({
     fontSize: '20px',
     marginLeft: '10px',
     marginTop: '10px',
-    fontFamily: 'Montserrat',
-    color: '#2c1e1a',
+    color: theme.palette.secondary.main,
   },
 }));
 

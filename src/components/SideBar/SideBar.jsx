@@ -17,25 +17,24 @@ import { publicRoutes, gameRoutes, ONBOARDING } from 'constants/routes';
 import { useGame } from 'contexts/GameContext';
 
 const useStyles = makeStyles((theme) => ({
-  drawer: {
-    background: '#9ac555',
-  },
   list: {
     width: 250,
-    background: '#9ac555',
+    background: '#fafafa',
     height: '100%',
   },
   listItem: {
     fontSize: '18px',
-    color: 'black',
+    color: theme.palette.primary.main,
     fontFamily: 'Open Sans',
+    fontWeight: 600,
   },
   fullList: {
     width: 'auto',
   },
   nested: {
     paddingLeft: theme.spacing(2),
-    color: 'black',
+    color: theme.palette.primary.main,
+    fontWeight: 600,
     fontSize: '16px',
   },
 }));

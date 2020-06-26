@@ -1,4 +1,6 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { allRoutes } from 'constants/routes';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -9,13 +11,11 @@ import SideBar from 'components/SideBar';
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
-    height: '56px',
-    [theme.breakpoints.up('sm')]: {
-      height: '64px',
-    },
+    height: '64px',
   },
   appBar: {
-    background: '#9ac555',
+    background: theme.palette.primary.main,
+    color: 'white',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -23,15 +23,15 @@ const useStyles = makeStyles((theme) => ({
   title: {
     paddingLeft: theme.spacing(2),
     fontFamily: 'Open Sans',
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
+    fontWeight: 600,
+    color: 'white',
+    display: 'block',
   },
 }));
 
 const NavBar = () => {
   const classes = useStyles();
+  const location = useLocation().pathname;
 
   return (
     <div className={classes.grow}>
@@ -39,9 +39,8 @@ const NavBar = () => {
         <Toolbar>
           <SideBar />
           <Typography className={classes.title} variant="h6" noWrap>
-            Auturec
+            {allRoutes.get(location)}
           </Typography>
-          <div className={classes.grow} />
         </Toolbar>
       </AppBar>
     </div>

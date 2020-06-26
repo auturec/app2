@@ -46,9 +46,9 @@ const ExpansionPanelDetails = withStyles((theme) => ({
   },
 }))(MuiExpansionPanelDetails);
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   faqQuestion: {
-    color: '#2c1e1a',
+    color: theme.palette.secondary.main,
     fontFamily: 'Open Sans',
     fontSize: '18px',
   },

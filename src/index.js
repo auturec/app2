@@ -21,7 +21,7 @@ const AppRender = () => {
         main: '#9ac555',
       },
       secondary: {
-        main: '#e28e36',
+        main: '#2c1e1a',
       },
     },
   });
