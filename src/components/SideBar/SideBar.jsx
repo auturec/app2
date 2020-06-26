@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   listItem: {
     fontSize: '18px',
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
     fontFamily: 'Open Sans',
     fontWeight: 600,
   },
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
   nested: {
     paddingLeft: theme.spacing(2),
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
     fontWeight: 600,
     fontSize: '16px',
   },
