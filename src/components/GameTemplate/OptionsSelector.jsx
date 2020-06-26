@@ -16,10 +16,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '30px',
   },
   button: {
-    fontFamily: 'Montserrat',
     background: '#9ac555',
     '&:hover': {
-      background: 'teal',
+      background: '#8bb34d',
     },
     fontSize: '16px',
   },

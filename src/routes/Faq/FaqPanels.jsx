@@ -53,7 +53,6 @@ const useStyles = makeStyles(() => ({
     fontSize: '18px',
   },
   faqText: {
-    fontFamily: 'Montserrat',
     fontSize: '16px',
   },
 }));

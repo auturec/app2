@@ -18,7 +18,6 @@ const useStyles = makeStyles(() => ({
   body: {
     margin: '10px',
     color: '#2c1e1a',
-    fontFamily: 'Montserrat',
     fontSize: '16px',
   },
   profilePic: {
