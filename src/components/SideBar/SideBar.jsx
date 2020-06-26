@@ -14,7 +14,7 @@ import Collapse from '@material-ui/core/Collapse';
 import Typography from '@material-ui/core/Typography';
 
 import { publicRoutes, gameRoutes, ONBOARDING } from 'constants/routes';
-import { useGameTemplate } from 'contexts/GameTemplateContext';
+import { useGame } from 'contexts/GameContext';
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SideBar = () => {
-  const { setIsResettingGame } = useGameTemplate();
+  const { setIsResettingGame } = useGame();
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,

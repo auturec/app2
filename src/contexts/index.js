@@ -1,12 +1,12 @@
 import React from 'react';
 import { ToastProvider } from 'react-toast-notifications';
 
-import { GameTemplateProvider } from './GameTemplateContext';
+import { GameProvider } from './GameContext';
 
 const AppProviders = ({ children }) => {
   return (
     <ToastProvider autoDismiss placement="bottom-right">
-      <GameTemplateProvider>{children}</GameTemplateProvider>
+      <GameProvider>{children}</GameProvider>
     </ToastProvider>
   );
 };

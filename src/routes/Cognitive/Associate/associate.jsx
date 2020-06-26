@@ -1,9 +1,10 @@
 import React from 'react';
 
-import AssociateGame from './AssociateGame';
+import GameTemplate from 'components/GameTemplate';
+import { associateData } from './data';
 
 export const Associate = () => {
-  return <AssociateGame />;
+  return <GameTemplate allOptions={associateData} />;
 };
 
 export default Associate;
