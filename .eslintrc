@@ -17,6 +17,7 @@
     "semi": "error"
   },
   "globals": {
+    "Image": true,
     "window": true,
     "document": true,
     "localStorage": true,

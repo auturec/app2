@@ -12,6 +12,7 @@ export const OCCUPATIONS = '/language/occupations';
 export const NUMBERS = '/numbers';
 export const WORDS = '/language/words';
 export const JUST_TILES = '/tiles';
+export const SORTS = '/sorts';
 
 export const publicRoutes = [
   {
@@ -48,5 +49,9 @@ export const gameRoutes = [
   {
     path: JUST_TILES,
     name: 'Tiles',
+  },
+  {
+    path: SORTS,
+    name: 'Sorts',
   },
 ];
