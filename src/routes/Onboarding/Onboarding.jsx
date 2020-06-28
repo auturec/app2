@@ -9,9 +9,9 @@ import Slide from './Slide';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    padding: theme.spacing(8, 2, 4, 2),
+    padding: theme.spacing(5, 2, 2, 2),
     [theme.breakpoints.up('sm')]: {
-      padding: theme.spacing(8, 6, 4, 6),
+      padding: theme.spacing(5, 6, 2, 6),
     },
   },
   appLogo: {
@@ -27,8 +27,11 @@ function Onboarding() {
 
   return (
     <div className={classes.paper}>
-      <img src={AppLogo} alt="" className={classes.appLogo} />
       <Grid container>
+        <Grid item xs={12} style={{ textAlign: 'center' }}>
+          <h2>Welcome to</h2>
+          <img src={AppLogo} alt="" className={classes.appLogo} />
+        </Grid>
         <Grid item xs={12} md={4}>
           <Slide
             img={CharacterSlide1}
