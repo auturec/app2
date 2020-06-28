@@ -70,15 +70,11 @@ const SideBar = () => {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        <ListItem button>
+        <ListItem button key="public-link-onboarding">
           <ListItemText
             disableTypography
             primary={
-              <Link
-                to={ONBOARDING}
-                key="public-link-onboarding"
-                onClick={toggleDrawer(side, false)}
-              >
+              <Link to={ONBOARDING} onClick={toggleDrawer(side, false)}>
                 <h2 className={classes.listItem}>Home</h2>
               </Link>
             }
@@ -97,13 +93,12 @@ const SideBar = () => {
         </ListItem>
         <Collapse in={open} timeout="auto" unmountOnExit>
           {gameRoutes.map((route) => (
-            <ListItem button>
+            <ListItem button key={`public-link-${route.name}`}>
               <ListItemText
                 disableTypography
                 primary={
                   <Link
                     to={route.path}
-                    key={`public-link-${route.name}`}
                     onClick={(event) => {
                       setIsResettingGame(true);
                       toggleDrawer(side, false)(event);
@@ -117,15 +112,11 @@ const SideBar = () => {
           ))}
         </Collapse>
         {publicRoutes.map((route) => (
-          <ListItem button>
+          <ListItem button key={`public-link-${route.name}`}>
             <ListItemText
               disableTypography
               primary={
-                <Link
-                  to={route.path}
-                  key={`public-link-${route.name}`}
-                  onClick={toggleDrawer(side, false)}
-                >
+                <Link to={route.path} onClick={toggleDrawer(side, false)}>
                   <h2 className={classes.listItem}>{route.name}</h2>
                 </Link>
               }
