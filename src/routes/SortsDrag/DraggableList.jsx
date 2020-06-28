@@ -5,7 +5,7 @@ import React, { useRef } from 'react';
 import clamp from 'lodash-es/clamp';
 import { isEqual } from 'lodash-es';
 import swap from 'lodash-move';
-import { useGesture } from 'react-use-gesture';
+import { useDrag } from 'react-use-gesture';
 import { useSprings, animated, interpolate } from 'react-spring';
 
 import { Content } from './styles';
@@ -32,7 +32,7 @@ const fn = (order, down, originalIndex, curIndex, y) => (index) =>
   down && index === originalIndex
     ? {
         y: curIndex * temp + y,
-        scale: 1,
+        scale: 1.1,
         zIndex: '1',
         shadow: 15,
         immediate: (n) => n === 'y' || n === 'zIndex',
@@ -48,11 +48,11 @@ const fn = (order, down, originalIndex, curIndex, y) => (index) =>
 export default ({ items, setCompleted, img }) => {
   const order = useRef(items.map((_, index) => index)); // Store indicies as a local ref, this represents the item order
   const [springs, setSprings] = useSprings(items.length, fn(order.current)); // Create springs, each corresponds to an item, controlling its transform, scale, etc.
-  const bind = useGesture((vars) => {
+  const bind = useDrag((vars) => {
     const {
       args: [originalIndex],
       down,
-      delta: [, y],
+      movement: [, y],
     } = vars;
     const curIndex = order.current.indexOf(originalIndex);
     const curRow = clamp(
