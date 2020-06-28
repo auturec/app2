@@ -4,7 +4,8 @@
   align-items: center;
   width: 100%;
 
-  padding-top: 5rem;
+  padding-top: 3rem;
+  padding-top: 3rem;
 
   &__square {
     width: 100%;
@@ -34,8 +35,7 @@
           }
 
           &.dragged-over {
-            background-color: rgba(126, 226, 122, 0.5);
-            border-color: green;
+            background-color: rgba(154,196,84,0.3);
           }
         }
       }
