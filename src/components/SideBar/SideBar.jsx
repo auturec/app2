@@ -26,17 +26,14 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Open Sans',
     fontSize: '1.125rem',
     fontWeight: 600,
-    margin: '0',
-  },
-  fullList: {
-    width: 'auto',
+    lineHeight: '1.5',
   },
   nested: {
     color: theme.palette.primary.dark,
     fontSize: '1rem',
     fontWeight: 600,
+    lineHeight: '1.5',
     paddingLeft: theme.spacing(2),
-    margin: '0',
   },
 }));
 
@@ -70,20 +67,25 @@ const SideBar = () => {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        <ListItem button key="public-link-onboarding">
+        <ListItem
+          button
+          component={Link}
+          to={ONBOARDING}
+          key="public-link-onboarding"
+          onClick={toggleDrawer(side, false)}
+        >
           <ListItemText
             disableTypography
-            primary={
-              <Link to={ONBOARDING} onClick={toggleDrawer(side, false)}>
-                <h2 className={classes.listItem}>Home</h2>
-              </Link>
-            }
+            className={classes.listItem}
+            primary="Home"
           />
         </ListItem>
+
         <ListItem button onClick={handleClick}>
           <ListItemText
+            className={classes.listItem}
             disableTypography
-            primary={<h2 className={classes.listItem}>Games</h2>}
+            primary="Games"
           />
           {open ? (
             <ExpandLess className={classes.listItem} />
@@ -91,35 +93,40 @@ const SideBar = () => {
             <ExpandMore className={classes.listItem} />
           )}
         </ListItem>
+
         <Collapse in={open} timeout="auto" unmountOnExit>
           {gameRoutes.map((route) => (
-            <ListItem button key={`public-link-${route.name}`}>
+            <ListItem
+              button
+              component={Link}
+              to={route.path}
+              key={`public-link-${route.name}`}
+              onClick={(event) => {
+                setIsResettingGame(true);
+                toggleDrawer(side, false)(event);
+              }}
+            >
               <ListItemText
                 disableTypography
-                primary={
-                  <Link
-                    to={route.path}
-                    onClick={(event) => {
-                      setIsResettingGame(true);
-                      toggleDrawer(side, false)(event);
-                    }}
-                  >
-                    <h2 className={classes.nested}>{route.name}</h2>
-                  </Link>
-                }
+                className={classes.nested}
+                primary={route.name}
               />
             </ListItem>
           ))}
         </Collapse>
+
         {publicRoutes.map((route) => (
-          <ListItem button key={`public-link-${route.name}`}>
+          <ListItem
+            button
+            component={Link}
+            to={route.path}
+            key={`public-link-${route.name}`}
+            onClick={toggleDrawer(side, false)}
+          >
             <ListItemText
               disableTypography
-              primary={
-                <Link to={route.path} onClick={toggleDrawer(side, false)}>
-                  <h2 className={classes.listItem}>{route.name}</h2>
-                </Link>
-              }
+              className={classes.listItem}
+              primary={route.name}
             />
           </ListItem>
         ))}
