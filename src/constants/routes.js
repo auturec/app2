@@ -50,3 +50,16 @@ export const gameRoutes = [
     name: 'Tiles',
   },
 ];
+
+export const allRoutes = new Map([
+  [TESTIMONIAL, 'Testimonial'],
+  [FAQ, 'FAQ'],
+  [ONBOARDING, 'Home'],
+  [ASSOCIATE, 'Game: Associate'],
+  [TILES, 'Game: Tiles'],
+  [JUST_TILES, 'Game: Tiles'],
+  [COLORS, 'Game: Colors'],
+  [OCCUPATIONS, 'Game: Occupations'],
+  [NUMBERS, 'Game: Numbers'],
+  [WORDS, 'Game: Words'],
+]);

@@ -10,13 +10,17 @@ import { FaqData } from './FaqData';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10),
+    paddingTop: theme.spacing(10),
   },
   header: {
     fontWeight: 'bold',
     fontSize: '30px',
-    color: 'teal',
+    color: theme.palette.secondary.main,
     textAlign: 'center',
+    fontFamily: 'Open Sans',
+  },
+  tabsHeader: {
+    fontFamily: 'Open Sans',
   },
   tabsPanel: {
     marginTop: '30px',
@@ -25,7 +29,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '20px',
   },
   tab: {
-    color: 'teal',
+    color: theme.palette.primary.dark,
+    fontWeight: 600,
+    fontSize: '18px',
   },
   faqLogo: {
     display: 'block',
@@ -50,7 +56,7 @@ export default function Forum() {
         <img src={FaqLogo} alt="" className={classes.faqLogo} />
         <AppBar position="static" color="default" className={classes.tabsPanel}>
           <Tabs
-            TabIndicatorProps={{ style: { background: 'teal' } }}
+            TabIndicatorProps={{ style: { background: '#9ac555' } }}
             value={value}
             onChange={handleChange}
             variant="fullWidth"

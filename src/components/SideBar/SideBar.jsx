@@ -11,6 +11,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
+import Typography from '@material-ui/core/Typography';
 
 import { publicRoutes, gameRoutes, ONBOARDING } from 'constants/routes';
 import { useGame } from 'contexts/GameContext';
@@ -18,16 +19,23 @@ import { useGame } from 'contexts/GameContext';
 const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
+    background: '#fafafa',
+    height: '100%',
   },
   listItem: {
-    color: 'teal',
+    fontSize: '18px',
+    color: theme.palette.primary.dark,
+    fontFamily: 'Open Sans',
+    fontWeight: 600,
   },
   fullList: {
     width: 'auto',
   },
   nested: {
     paddingLeft: theme.spacing(2),
-    color: 'teal',
+    color: theme.palette.primary.dark,
+    fontWeight: 600,
+    fontSize: '16px',
   },
 }));
 
@@ -67,12 +75,30 @@ const SideBar = () => {
           onClick={toggleDrawer(side, false)}
         >
           <ListItem button>
-            <ListItemText primary="Home" className={classes.listItem} />
+            <ListItemText
+              disableTypography
+              primary={
+                <Typography type="h1" className={classes.listItem}>
+                  Home
+                </Typography>
+              }
+            />
           </ListItem>
         </Link>
         <ListItem button onClick={handleClick}>
-          <ListItemText primary="Games" className={classes.listItem} />{' '}
-          {open ? <ExpandLess /> : <ExpandMore />}
+          <ListItemText
+            disableTypography
+            primary={
+              <Typography type="h1" className={classes.listItem}>
+                Games
+              </Typography>
+            }
+          />
+          {open ? (
+            <ExpandLess className={classes.listItem} />
+          ) : (
+            <ExpandMore className={classes.listItem} />
+          )}
         </ListItem>
         <Collapse in={open} timeout="auto" unmountOnExit>
           {gameRoutes.map((route) => (
@@ -85,7 +111,14 @@ const SideBar = () => {
               }}
             >
               <ListItem button>
-                <ListItemText primary={route.name} className={classes.nested} />
+                <ListItemText
+                  disableTypography
+                  primary={
+                    <Typography type="h1" className={classes.nested}>
+                      {route.name}
+                    </Typography>
+                  }
+                />
               </ListItem>
             </Link>
           ))}
@@ -97,7 +130,14 @@ const SideBar = () => {
             onClick={toggleDrawer(side, false)}
           >
             <ListItem button>
-              <ListItemText primary={route.name} className={classes.listItem} />
+              <ListItemText
+                disableTypography
+                primary={
+                  <Typography type="h1" className={classes.listItem}>
+                    {route.name}
+                  </Typography>
+                }
+              />
             </ListItem>
           </Link>
         ))}

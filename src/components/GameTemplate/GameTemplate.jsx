@@ -16,7 +16,8 @@ import './GameTemplate.scss';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10),
+    paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(5),
   },
 }));
 
