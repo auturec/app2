@@ -108,9 +108,11 @@ const GameTemplate = ({
     const isCorrect = option === state.answer.name;
     if (isCorrect) {
       state.feedbackSound.sound.play();
-      setTimeout(() => {
-        state.thisIsSound.play();
-      }, 1000);
+      if (state.wrongAttempts > maxNumberOfWrongAttempts) {
+        setTimeout(() => {
+          state.thisIsSound.play();
+        }, 1000);
+      }
       setState({
         isCompleted: true,
       });
