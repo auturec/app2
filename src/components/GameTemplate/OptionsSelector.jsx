@@ -22,6 +22,18 @@ const OptionsSelector = ({ allOptions }) => {
     }
   }, [isResettingGame, setIsResettingGame]);
 
+  const allOptionsLength = allOptions.length;
+
+  if (allOptionsLength <= 1) {
+    return (
+      <Container component="main" maxWidth="sm">
+        <div className="options-selector">
+          <h2>It seems like this game is not ready yet. Do come back later!</h2>
+        </div>
+      </Container>
+    );
+  }
+
   if (startGame && numberOfOptionsPerRound && difficulty) {
     return (
       <GameTemplate
@@ -45,33 +57,39 @@ const OptionsSelector = ({ allOptions }) => {
     <Container component="main" maxWidth="sm">
       <div className="options-selector">
         <h2>Please select the number of options presented in each round:</h2>
-        <Button
-          color={numberOfOptionsPerRound === 2 ? 'primary' : 'default'}
-          variant="contained"
-          size="large"
-          fullWidth
-          onClick={() => setNumberOfOptionsPerRound(2)}
-        >
-          TWO
-        </Button>
-        <Button
-          color={numberOfOptionsPerRound === 3 ? 'primary' : 'default'}
-          variant="contained"
-          size="large"
-          fullWidth
-          onClick={() => setNumberOfOptionsPerRound(3)}
-        >
-          THREE
-        </Button>
-        <Button
-          color={numberOfOptionsPerRound === 4 ? 'primary' : 'default'}
-          variant="contained"
-          size="large"
-          fullWidth
-          onClick={() => setNumberOfOptionsPerRound(4)}
-        >
-          FOUR
-        </Button>
+        {allOptionsLength >= 2 && (
+          <Button
+            color={numberOfOptionsPerRound === 2 ? 'primary' : 'default'}
+            variant="contained"
+            size="large"
+            fullWidth
+            onClick={() => setNumberOfOptionsPerRound(2)}
+          >
+            TWO
+          </Button>
+        )}
+        {allOptionsLength >= 3 && (
+          <Button
+            color={numberOfOptionsPerRound === 3 ? 'primary' : 'default'}
+            variant="contained"
+            size="large"
+            fullWidth
+            onClick={() => setNumberOfOptionsPerRound(3)}
+          >
+            THREE
+          </Button>
+        )}
+        {allOptionsLength >= 4 && (
+          <Button
+            color={numberOfOptionsPerRound === 4 ? 'primary' : 'default'}
+            variant="contained"
+            size="large"
+            fullWidth
+            onClick={() => setNumberOfOptionsPerRound(4)}
+          >
+            FOUR
+          </Button>
+        )}
 
         {difficulties.length > 1 && (
           <>
