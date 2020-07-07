@@ -8,28 +8,50 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import Collapse from '@material-ui/core/Collapse';
+import Typography from '@material-ui/core/Typography';
 
-import { publicRoutes } from 'constants/routes';
+import { publicRoutes, gameRoutes, ONBOARDING } from 'constants/routes';
+import { useGame } from 'contexts/GameContext';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
+    background: '#fafafa',
+    height: '100%',
   },
   listItem: {
-    color: 'teal',
+    fontSize: '18px',
+    color: theme.palette.primary.dark,
+    fontFamily: 'Open Sans',
+    fontWeight: 600,
   },
   fullList: {
     width: 'auto',
   },
-});
+  nested: {
+    paddingLeft: theme.spacing(2),
+    color: theme.palette.primary.dark,
+    fontWeight: 600,
+    fontSize: '16px',
+  },
+}));
 
 const SideBar = () => {
+  const { setIsResettingGame } = useGame();
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
   });
+  const [open, setOpen] = React.useState(false);
 
-  const toggleDrawer = (side, open) => (event) => {
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  const toggleDrawer = (side, isDrawerOpen) => (event) => {
     if (
       event &&
       event.type === 'keydown' &&
@@ -37,22 +59,85 @@ const SideBar = () => {
     ) {
       return;
     }
-
-    setState({ ...state, [side]: open });
+    setState({ ...state, [side]: isDrawerOpen });
   };
 
   const sideList = (side) => (
     <div
       className={classes.list}
       role="presentation"
-      onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
+        <Link
+          to={ONBOARDING}
+          key="public-link-onboarding"
+          onClick={toggleDrawer(side, false)}
+        >
+          <ListItem button>
+            <ListItemText
+              disableTypography
+              primary={
+                <Typography type="h1" className={classes.listItem}>
+                  Home
+                </Typography>
+              }
+            />
+          </ListItem>
+        </Link>
+        <ListItem button onClick={handleClick}>
+          <ListItemText
+            disableTypography
+            primary={
+              <Typography type="h1" className={classes.listItem}>
+                Games
+              </Typography>
+            }
+          />
+          {open ? (
+            <ExpandLess className={classes.listItem} />
+          ) : (
+            <ExpandMore className={classes.listItem} />
+          )}
+        </ListItem>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          {gameRoutes.map((route) => (
+            <Link
+              to={route.path}
+              key={`public-link-${route.name}`}
+              onClick={(event) => {
+                setIsResettingGame(true);
+                toggleDrawer(side, false)(event);
+              }}
+            >
+              <ListItem button>
+                <ListItemText
+                  disableTypography
+                  primary={
+                    <Typography type="h1" className={classes.nested}>
+                      {route.name}
+                    </Typography>
+                  }
+                />
+              </ListItem>
+            </Link>
+          ))}
+        </Collapse>
         {publicRoutes.map((route) => (
-          <Link to={route.path} key={`public-link-${route.name}`}>
+          <Link
+            to={route.path}
+            key={`public-link-${route.name}`}
+            onClick={toggleDrawer(side, false)}
+          >
             <ListItem button>
-              <ListItemText primary={route.name} className={classes.listItem} />
+              <ListItemText
+                disableTypography
+                primary={
+                  <Typography type="h1" className={classes.listItem}>
+                    {route.name}
+                  </Typography>
+                }
+              />
             </ListItem>
           </Link>
         ))}

@@ -8,7 +8,7 @@ import { TestimonialsData } from './TestimonialsData';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(4),
   },
 }));
 
@@ -22,7 +22,7 @@ const Testimonials = () => {
             key={testimonial.id}
             userName={testimonial.userName}
             profilePic={testimonial.profilePic}
-            userInfo={testimonial.userInfo}
+            date={testimonial.date}
             comment={testimonial.comment}
           />
         ))}

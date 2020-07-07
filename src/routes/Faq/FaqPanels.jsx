@@ -10,16 +10,16 @@ const ExpansionPanel = withStyles({
     border: '1px solid rgba(0, 0, 0, .125)',
     boxShadow: 'none',
     '&:not(:last-child)': {
-      borderBottom: 0
+      borderBottom: 0,
     },
     '&:before': {
-      display: 'none'
+      display: 'none',
     },
     '&$expanded': {
-      margin: 'auto'
-    }
+      margin: 'auto',
+    },
   },
-  expanded: {}
+  expanded: {},
 })(MuiExpansionPanel);
 
 const ExpansionPanelSummary = withStyles({
@@ -29,40 +29,45 @@ const ExpansionPanelSummary = withStyles({
     marginBottom: -1,
     minHeight: 56,
     '&$expanded': {
-      minHeight: 56
-    }
+      minHeight: 56,
+    },
   },
   content: {
     '&$expanded': {
-      margin: '12px 0'
-    }
+      margin: '12px 0',
+    },
   },
-  expanded: {}
+  expanded: {},
 })(MuiExpansionPanelSummary);
 
-const ExpansionPanelDetails = withStyles(theme => ({
+const ExpansionPanelDetails = withStyles((theme) => ({
   root: {
-    padding: theme.spacing(2)
-  }
+    padding: theme.spacing(2),
+  },
 }))(MuiExpansionPanelDetails);
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   faqQuestion: {
-    color: 'teal'
-  }
+    color: theme.palette.secondary.main,
+    fontFamily: 'Open Sans',
+    fontSize: '18px',
+  },
+  faqText: {
+    fontSize: '16px',
+  },
 }));
 
 const FaqExpansionPanels = ({ faqs }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(`panel${faqs[0].id}`);
 
-  const handleChange = panel => (event, newExpanded) => {
+  const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
   return (
     <div>
-      {faqs.map(faq => (
+      {faqs.map((faq) => (
         <ExpansionPanel
           square
           expanded={expanded === `panel${faq.id}`}
@@ -78,7 +83,7 @@ const FaqExpansionPanels = ({ faqs }) => {
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>{faq.answer}</Typography>
+            <Typography className={classes.faqText}>{faq.answer}</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       ))}

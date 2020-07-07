@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Carousel } from 'antd';
-import NameLogo from 'assets/Logo/Name.svg';
+import AppLogo from 'assets/Logo/AppLogo.svg';
 import CharacterSlide2 from 'assets/Onboarding/CharacterSlide2.svg';
 import CharacterSlide1 from 'assets/Onboarding/CharacterSlide1.svg';
 import CharacterSlide3 from 'assets/Onboarding/CharacterSlide3.svg';
@@ -12,8 +12,10 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(10),
   },
-  nameLogo: {
-    margin: '0px auto',
+  appLogo: {
+    width: '200px',
+    display: 'block',
+    margin: '0 auto',
   },
 }));
 
@@ -23,7 +25,7 @@ function Onboarding() {
   return (
     <Container component="main" maxWidth="sm">
       <div className={classes.paper}>
-        <img src={NameLogo} alt="" className={classes.nameLogo} />
+        <img src={AppLogo} alt="" className={classes.appLogo} />
         <Carousel autoplay>
           <Slide
             img={CharacterSlide1}
@@ -32,7 +34,7 @@ function Onboarding() {
           />
           <Slide
             img={CharacterSlide2}
-            header="Child profiling (comming soon)"
+            header="Child profiling (coming soon)"
             subheader="Track your child's progress"
           />
           <Slide

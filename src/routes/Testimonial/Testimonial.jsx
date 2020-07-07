@@ -1,51 +1,61 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
+import TimeAgo from 'react-timeago';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   card: {
-    border: '1px teal solid',
+    backgroundColor: 'white',
+    border: '1px rgba(0,0,0,0.2) solid',
     width: '100%',
-    borderRadius: '10px',
-    padding: '20px',
-    margin: '10px 0px'
+    padding: theme.spacing(4),
+    marginBottom: theme.spacing(4),
   },
-  header: {
-    display: 'flex'
+  cardBody: {
+    color: 'black',
+    lineHeight: '1.75em',
+    fontSize: '1rem',
+    paddingBottom: theme.spacing(2),
   },
-  body: {
-    margin: '10px',
-    color: 'teal'
+  cardFooter: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    fontFamily: 'Open Sans',
   },
   profilePic: {
-    margin: '10px'
+    width: '44px',
+    height: '44px',
   },
-  userInfo: {
-    fontSize: '20px',
-    color: 'grey',
-    margin: '10px',
-    fontWeight: 'bold'
+  userName: {
+    textAlign: 'right',
+    fontSize: '1rem',
+    marginRight: theme.spacing(2),
   },
-  large: {
-    width: '60px',
-    height: '60px'
-  }
+  userDate: {
+    display: 'block',
+    textAlign: 'right',
+    fontSize: '0.85rem',
+    marginRight: theme.spacing(2),
+    color: 'rgba(0,0,0,0.6)',
+  },
 }));
 
-const Testimonial = ({ userName, profilePic, userInfo, comment }) => {
+const Testimonial = ({ userName, profilePic, date, comment }) => {
   const classes = useStyles();
   return (
     <div className={classes.card}>
-      <div className={classes.header}>
-        <div className={classes.profilePic}>
-          <Avatar alt={userName} src={profilePic} className={classes.large} />
+      <div className={classes.cardBody}>{comment}</div>
+      <div className={classes.cardFooter}>
+        <div>
+          <div className={classes.userName}>{userName}</div>
+          <TimeAgo date={date} className={classes.userDate} />
         </div>
-        <div className={classes.userInfo}>
-          <div>{userName}</div>
-          <div>{userInfo}</div>
-        </div>
+        <Avatar
+          alt={userName}
+          src={profilePic}
+          className={classes.profilePic}
+        />
       </div>
-      <div className={classes.body}>{comment}</div>
     </div>
   );
 };

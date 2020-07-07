@@ -1,0 +1,15 @@
+export { default as Bike } from './Bike';
+export { default as Carpet } from './Carpet';
+export { default as Chair } from './Chair';
+export { default as Cow } from './Cow';
+export { default as Crab } from './Crab';
+export { default as Deer } from './Deer';
+export { default as Grandfatherclock } from './Grandfatherclock';
+export { default as Hen } from './Hen';
+export { default as Pig } from './Pig';
+export { default as Scooter } from './Scooter';
+export { default as Standlamp } from './Standlamp';
+export { default as Tablelamp } from './Tablelamp';
+export { default as Train } from './Train';
+export { default as Truck } from './Truck';
+export { default as Wheel } from './Wheel';
