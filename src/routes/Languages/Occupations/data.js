@@ -1,96 +1,96 @@
 import React from 'react';
 
-import * as OccupationSvg from 'assets/images/languages/occupations';
+import * as OccupationMediumSvg from 'assets/images/occupations/medium';
 import { occupationSounds } from './sounds';
 
 export const occupationData = [
   {
-    component: <OccupationSvg.Astronaut style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Astronaut style={{ height: 'auto' }} />,
     name: 'Astronaut',
     ...occupationSounds.astronaut,
   },
   {
-    component: <OccupationSvg.Baker style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Baker style={{ height: 'auto' }} />,
     name: 'Baker',
     ...occupationSounds.baker,
   },
   {
-    component: <OccupationSvg.Barber style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Barber style={{ height: 'auto' }} />,
     name: 'Barber',
     ...occupationSounds.barber,
   },
   {
-    component: <OccupationSvg.Cashier style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Cashier style={{ height: 'auto' }} />,
     name: 'Cashier',
     ...occupationSounds.cashier,
   },
   {
-    component: <OccupationSvg.Chef style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Chef style={{ height: 'auto' }} />,
     name: 'Chef',
     ...occupationSounds.chef,
   },
   {
-    component: <OccupationSvg.Doctor style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Doctor style={{ height: 'auto' }} />,
     name: 'Doctor',
     ...occupationSounds.doctor,
   },
   {
-    component: <OccupationSvg.Farmer style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Farmer style={{ height: 'auto' }} />,
     name: 'Farmer',
     ...occupationSounds.farmer,
   },
   {
-    component: <OccupationSvg.Fireman style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Fireman style={{ height: 'auto' }} />,
     name: 'Fireman',
     ...occupationSounds.fireman,
   },
   {
-    component: <OccupationSvg.Librarian style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Librarian style={{ height: 'auto' }} />,
     name: 'Librarian',
     ...occupationSounds.librarian,
   },
   {
-    component: <OccupationSvg.Nurse style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Nurse style={{ height: 'auto' }} />,
     name: 'Nurse',
     ...occupationSounds.nurse,
   },
   {
-    component: <OccupationSvg.Painter style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Painter style={{ height: 'auto' }} />,
     name: 'Painter',
     ...occupationSounds.painter,
   },
   {
-    component: <OccupationSvg.Pilot style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Pilot style={{ height: 'auto' }} />,
     name: 'Pilot',
     ...occupationSounds.pilot,
   },
   {
-    component: <OccupationSvg.Policeman style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Policeman style={{ height: 'auto' }} />,
     name: 'Policeman',
     ...occupationSounds.policeman,
   },
   {
-    component: <OccupationSvg.Scientist style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Scientist style={{ height: 'auto' }} />,
     name: 'Scientist',
     ...occupationSounds.scientist,
   },
   {
-    component: <OccupationSvg.Student style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Student style={{ height: 'auto' }} />,
     name: 'Student',
     ...occupationSounds.student,
   },
   {
-    component: <OccupationSvg.Teacher style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Teacher style={{ height: 'auto' }} />,
     name: 'Teacher',
     ...occupationSounds.teacher,
   },
   {
-    component: <OccupationSvg.Vet style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Vet style={{ height: 'auto' }} />,
     name: 'Vet',
     ...occupationSounds.vet,
   },
   {
-    component: <OccupationSvg.Waiter style={{ height: 'auto' }} />,
+    component: <OccupationMediumSvg.Waiter style={{ height: 'auto' }} />,
     name: 'Waiter',
     ...occupationSounds.waiter,
   },
