@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Button } from '@material-ui/core';
 
+import { MEDIUM } from 'constants/difficulties';
 import { useGame } from 'contexts/GameContext';
 import GameTemplate from './GameTemplate';
 
@@ -22,6 +23,7 @@ const OptionsSelector = ({ allOptions }) => {
       <GameTemplate
         allOptions={allOptions}
         numberOfOptionsPerRound={numberOfOptionsPerRound}
+        difficulty={MEDIUM}
       />
     );
   }

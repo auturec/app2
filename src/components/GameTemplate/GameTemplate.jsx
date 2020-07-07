@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 // Refer to routes/Occupations for example of how to use this component
 const GameTemplate = ({
   allOptions,
+  difficulty,
   numberOfOptionsPerRound = 4,
   className = '',
 }) => {
@@ -187,7 +188,7 @@ const GameTemplate = ({
                 key={`game-template-button-${o.name}`}
                 disabled={state.isCompleted && o.name === state.answer.name}
               >
-                {o.component}
+                {o[difficulty]}
               </Button>
             ))}
           </Grid>
