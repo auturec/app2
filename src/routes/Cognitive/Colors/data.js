@@ -1,52 +1,53 @@
 import React from 'react';
 
+import { MEDIUM } from 'constants/difficulties';
 import ColorBox from './ColorBox';
 import { colorSounds } from './sounds';
 import './Colors.scss';
 
 export const colorData = [
   {
-    component: <ColorBox color="red" />,
+    [MEDIUM]: <ColorBox color="red" />,
     name: 'Red',
     ...colorSounds.red,
   },
   {
-    component: <ColorBox color="orange" />,
+    [MEDIUM]: <ColorBox color="orange" />,
     name: 'Orange',
     ...colorSounds.orange,
   },
   {
-    component: <ColorBox color="yellow" />,
+    [MEDIUM]: <ColorBox color="yellow" />,
     name: 'Yellow',
     ...colorSounds.yellow,
   },
   {
-    component: <ColorBox color="green" />,
+    [MEDIUM]: <ColorBox color="green" />,
     name: 'Green',
     ...colorSounds.green,
   },
   {
-    component: <ColorBox color="blue" />,
+    [MEDIUM]: <ColorBox color="blue" />,
     name: 'Blue',
     ...colorSounds.blue,
   },
   {
-    component: <ColorBox color="brown" />,
+    [MEDIUM]: <ColorBox color="brown" />,
     name: 'Brown',
     ...colorSounds.brown,
   },
   {
-    component: <ColorBox color="black" />,
+    [MEDIUM]: <ColorBox color="black" />,
     name: 'Black',
     ...colorSounds.black,
   },
   {
-    component: <ColorBox color="white" />,
+    [MEDIUM]: <ColorBox color="white" />,
     name: 'White',
     ...colorSounds.white,
   },
   {
-    component: <ColorBox color="purple" />,
+    [MEDIUM]: <ColorBox color="purple" />,
     name: 'Purple',
     ...colorSounds.purple,
   },
