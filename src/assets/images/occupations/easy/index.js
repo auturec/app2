@@ -1,7 +1,7 @@
 export { default as Astronaut } from './Astronaut';
 export { default as Baker } from './Baker';
-// export { default as Barber } from "./Barber";
-// export { default as Cashier } from "./Cashier";
+export { default as Barber } from './Barber';
+export { default as Cashier } from './Cashier';
 export { default as Chef } from './Chef';
 export { default as Doctor } from './Doctor';
 export { default as Farmer } from './Farmer';
