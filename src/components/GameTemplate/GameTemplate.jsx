@@ -43,7 +43,7 @@ const GameTemplate = ({
   const maxNumberOfWrongAttempts = numberOfOptionsPerRound > 2 ? 1 : 0;
   const allOptionsLength = allOptions.length;
   const maxRepeatsBetweenRounds =
-    allOptionsLength > 7 ? 2 : allOptionsLength > 5 ? 1 : 0;
+    allOptionsLength > 7 ? 2 : allOptionsLength > 4 ? 3 : 4;
 
   useEffect(() => {
     let didCancel = false;
@@ -85,8 +85,8 @@ const GameTemplate = ({
     const previousAnswer = state.answer;
     let options = getNRandomElements(allOptions, numberOfOptionsPerRound);
     while (
-      getNumberOfEqualOptions(options, state.options) >=
-      Math.min(Math.floor(numberOfOptionsPerRound / 2), maxRepeatsBetweenRounds)
+      getNumberOfEqualOptions(options, state.options) >
+      Math.max(Math.floor(numberOfOptionsPerRound / 2), maxRepeatsBetweenRounds)
     ) {
       options = getNRandomElements(allOptions, numberOfOptionsPerRound);
     }
