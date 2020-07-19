@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     background: theme.palette.primary.main,
-    color: 'white',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -24,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(2),
     fontFamily: 'Open Sans',
     fontWeight: 600,
-    color: 'white',
     display: 'block',
   },
 }));

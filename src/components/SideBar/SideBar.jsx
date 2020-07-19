@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
   },
   listItem: {
     color: theme.palette.primary.dark,
-    fontFamily: 'Open Sans',
     fontSize: '1.125rem',
     fontWeight: 600,
     lineHeight: '1.5',

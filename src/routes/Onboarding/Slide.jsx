@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     color: theme.palette.secondary.main,
-    fontFamily: 'Open Sans',
+    fontFamily: 'Montserrat',
     fontSize: '1.6rem',
     fontWeight: '600',
   },

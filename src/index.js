@@ -13,11 +13,12 @@ const AppRender = () => {
   // setting the default font to Montserrat
   const theme = createMuiTheme({
     typography: {
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: 'Open Sans, sans-serif',
     },
     palette: {
       primary: {
         main: '#9ac555',
+        contrastText: '#fff',
       },
       secondary: {
         main: '#2c1e1a',
