@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 // Refer to routes/Occupations for example of how to use this component
 const GameTemplate = ({
   allOptions,
+  difficulty,
   numberOfOptionsPerRound = 4,
   className = '',
 }) => {
@@ -40,6 +41,9 @@ const GameTemplate = ({
     feedbackSound: null,
   });
   const maxNumberOfWrongAttempts = numberOfOptionsPerRound > 2 ? 1 : 0;
+  const allOptionsLength = allOptions.length;
+  const maxRepeatsBetweenRounds =
+    allOptionsLength > 7 ? 2 : allOptionsLength > 4 ? 3 : 4;
 
   useEffect(() => {
     let didCancel = false;
@@ -81,8 +85,8 @@ const GameTemplate = ({
     const previousAnswer = state.answer;
     let options = getNRandomElements(allOptions, numberOfOptionsPerRound);
     while (
-      getNumberOfEqualOptions(options, state.options) >=
-      Math.floor(numberOfOptionsPerRound / 2)
+      getNumberOfEqualOptions(options, state.options) >
+      Math.max(Math.floor(numberOfOptionsPerRound / 2), maxRepeatsBetweenRounds)
     ) {
       options = getNRandomElements(allOptions, numberOfOptionsPerRound);
     }
@@ -108,9 +112,11 @@ const GameTemplate = ({
     const isCorrect = option === state.answer.name;
     if (isCorrect) {
       state.feedbackSound.sound.play();
-      setTimeout(() => {
-        state.thisIsSound.play();
-      }, 1000);
+      if (state.wrongAttempts > maxNumberOfWrongAttempts) {
+        setTimeout(() => {
+          state.thisIsSound.play();
+        }, 1000);
+      }
       setState({
         isCompleted: true,
       });
@@ -187,7 +193,7 @@ const GameTemplate = ({
                 key={`game-template-button-${o.name}`}
                 disabled={state.isCompleted && o.name === state.answer.name}
               >
-                {o.component}
+                {o[difficulty]}
               </Button>
             ))}
           </Grid>

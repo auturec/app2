@@ -11,6 +11,7 @@ export const COLORS = '/cognitive/colors';
 export const OCCUPATIONS = '/language/occupations';
 export const NUMBERS = '/numbers';
 export const WORDS = '/language/words';
+export const SHAPES = '/shapes';
 export const JUST_TILES = '/tiles';
 
 export const publicRoutes = [
@@ -46,6 +47,10 @@ export const gameRoutes = [
     name: 'Words',
   },
   {
+    path: SHAPES,
+    name: 'Shapes',
+  },
+  {
     path: JUST_TILES,
     name: 'Tiles',
   },
@@ -62,4 +67,5 @@ export const allRoutes = new Map([
   [OCCUPATIONS, 'Game: Occupations'],
   [NUMBERS, 'Game: Numbers'],
   [WORDS, 'Game: Words'],
+  [SHAPES, 'Game: Shapes'],
 ]);
