@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import { Carousel } from 'antd';
+import Grid from '@material-ui/core/Grid';
 import AppLogo from 'assets/Logo/AppLogo.svg';
 import CharacterSlide2 from 'assets/Onboarding/CharacterSlide2.svg';
 import CharacterSlide1 from 'assets/Onboarding/CharacterSlide1.svg';
@@ -10,12 +9,16 @@ import Slide from './Slide';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10),
+    padding: theme.spacing(5, 2, 2, 2),
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(5, 6, 2, 6),
+    },
   },
   appLogo: {
     width: '200px',
     display: 'block',
     margin: '0 auto',
+    paddingBottom: theme.spacing(4),
   },
 }));
 
@@ -23,28 +26,35 @@ function Onboarding() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="sm">
-      <div className={classes.paper}>
-        <img src={AppLogo} alt="" className={classes.appLogo} />
-        <Carousel autoplay>
+    <div className={classes.paper}>
+      <Grid container>
+        <Grid item xs={12} style={{ textAlign: 'center' }}>
+          <h2>Welcome to</h2>
+          <img src={AppLogo} alt="" className={classes.appLogo} />
+        </Grid>
+        <Grid item xs={12} md={4}>
           <Slide
             img={CharacterSlide1}
             header="Games and activities"
             subheader="Expert certified activities created specially for your special child"
           />
+        </Grid>
+        <Grid item xs={12} md={4} py={2}>
           <Slide
             img={CharacterSlide2}
             header="Child profiling (coming soon)"
             subheader="Track your child's progress"
           />
+        </Grid>
+        <Grid item xs={12} md={4} py={2}>
           <Slide
             img={CharacterSlide3}
             header="Forum and community (coming soon)"
             subheader="Made just for you"
           />
-        </Carousel>
-      </div>
-    </Container>
+        </Grid>
+      </Grid>
+    </div>
   );
 }
 
