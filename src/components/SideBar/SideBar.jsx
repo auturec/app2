@@ -11,7 +11,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
-import Typography from '@material-ui/core/Typography';
 
 import { publicRoutes, gameRoutes, ONBOARDING } from 'constants/routes';
 import { useGame } from 'contexts/GameContext';
@@ -23,19 +22,17 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
   },
   listItem: {
-    fontSize: '18px',
     color: theme.palette.primary.dark,
-    fontFamily: 'Open Sans',
+    fontSize: '1.125rem',
     fontWeight: 600,
-  },
-  fullList: {
-    width: 'auto',
+    lineHeight: '1.5',
   },
   nested: {
-    paddingLeft: theme.spacing(2),
     color: theme.palette.primary.dark,
+    fontSize: '1rem',
     fontWeight: 600,
-    fontSize: '16px',
+    lineHeight: '1.5',
+    paddingLeft: theme.spacing(2),
   },
 }));
 
@@ -69,30 +66,25 @@ const SideBar = () => {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        <Link
+        <ListItem
+          button
+          component={Link}
           to={ONBOARDING}
           key="public-link-onboarding"
           onClick={toggleDrawer(side, false)}
         >
-          <ListItem button>
-            <ListItemText
-              disableTypography
-              primary={
-                <Typography type="h1" className={classes.listItem}>
-                  Home
-                </Typography>
-              }
-            />
-          </ListItem>
-        </Link>
-        <ListItem button onClick={handleClick}>
           <ListItemText
             disableTypography
-            primary={
-              <Typography type="h1" className={classes.listItem}>
-                Games
-              </Typography>
-            }
+            className={classes.listItem}
+            primary="Home"
+          />
+        </ListItem>
+
+        <ListItem button onClick={handleClick}>
+          <ListItemText
+            className={classes.listItem}
+            disableTypography
+            primary="Games"
           />
           {open ? (
             <ExpandLess className={classes.listItem} />
@@ -100,9 +92,12 @@ const SideBar = () => {
             <ExpandMore className={classes.listItem} />
           )}
         </ListItem>
+
         <Collapse in={open} timeout="auto" unmountOnExit>
           {gameRoutes.map((route) => (
-            <Link
+            <ListItem
+              button
+              component={Link}
               to={route.path}
               key={`public-link-${route.name}`}
               onClick={(event) => {
@@ -110,36 +105,29 @@ const SideBar = () => {
                 toggleDrawer(side, false)(event);
               }}
             >
-              <ListItem button>
-                <ListItemText
-                  disableTypography
-                  primary={
-                    <Typography type="h1" className={classes.nested}>
-                      {route.name}
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            </Link>
+              <ListItemText
+                disableTypography
+                className={classes.nested}
+                primary={route.name}
+              />
+            </ListItem>
           ))}
         </Collapse>
+
         {publicRoutes.map((route) => (
-          <Link
+          <ListItem
+            button
+            component={Link}
             to={route.path}
             key={`public-link-${route.name}`}
             onClick={toggleDrawer(side, false)}
           >
-            <ListItem button>
-              <ListItemText
-                disableTypography
-                primary={
-                  <Typography type="h1" className={classes.listItem}>
-                    {route.name}
-                  </Typography>
-                }
-              />
-            </ListItem>
-          </Link>
+            <ListItemText
+              disableTypography
+              className={classes.listItem}
+              primary={route.name}
+            />
+          </ListItem>
         ))}
       </List>
       <Divider />

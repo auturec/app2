@@ -24,7 +24,7 @@ const OptionsSelector = () => {
 
   return (
     <Container component="main" maxWidth="sm">
-      <div className="options-selector">
+      <div className="options-selector-tiles">
         <h2>Please select the number of colours presented in each round:</h2>
         <Button
           variant="contained"

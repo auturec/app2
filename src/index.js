@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'antd/dist/antd.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -14,11 +13,12 @@ const AppRender = () => {
   // setting the default font to Montserrat
   const theme = createMuiTheme({
     typography: {
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: 'Open Sans, sans-serif',
     },
     palette: {
       primary: {
         main: '#9ac555',
+        contrastText: '#fff',
       },
       secondary: {
         main: '#2c1e1a',
